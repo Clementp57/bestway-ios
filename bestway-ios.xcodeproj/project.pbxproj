@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
+		75F581721D9C032600B7ADAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F581711D9C032600B7ADAD /* ViewController.swift */; };
+		75F581751D9C032600B7ADAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581731D9C032600B7ADAD /* Main.storyboard */; };
+		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
+		75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		75F5816C1D9C032600B7ADAD /* bestway-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bestway-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F5816F1D9C032600B7ADAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		75F581711D9C032600B7ADAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		75F581741D9C032600B7ADAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		75F581761D9C032600B7ADAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		75F581791D9C032600B7ADAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		75F5817B1D9C032600B7ADAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75F581691D9C032600B7ADAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75F581631D9C032600B7ADAD = {
+			isa = PBXGroup;
+			children = (
+				75F5816E1D9C032600B7ADAD /* bestway-ios */,
+				75F5816D1D9C032600B7ADAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75F5816D1D9C032600B7ADAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75F5816C1D9C032600B7ADAD /* bestway-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75F5816E1D9C032600B7ADAD /* bestway-ios */ = {
+			isa = PBXGroup;
+			children = (
+				75F5816F1D9C032600B7ADAD /* AppDelegate.swift */,
+				75F581711D9C032600B7ADAD /* ViewController.swift */,
+				75F581731D9C032600B7ADAD /* Main.storyboard */,
+				75F581761D9C032600B7ADAD /* Assets.xcassets */,
+				75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */,
+				75F5817B1D9C032600B7ADAD /* Info.plist */,
+			);
+			path = "bestway-ios";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75F5816B1D9C032600B7ADAD /* bestway-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75F5817E1D9C032600B7ADAD /* Build configuration list for PBXNativeTarget "bestway-ios" */;
+			buildPhases = (
+				75F581681D9C032600B7ADAD /* Sources */,
+				75F581691D9C032600B7ADAD /* Frameworks */,
+				75F5816A1D9C032600B7ADAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "bestway-ios";
+			productName = "bestway-ios";
+			productReference = 75F5816C1D9C032600B7ADAD /* bestway-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75F581641D9C032600B7ADAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = ESGI;
+				TargetAttributes = {
+					75F5816B1D9C032600B7ADAD = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = FY6W72MUV4;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 75F581671D9C032600B7ADAD /* Build configuration list for PBXProject "bestway-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75F581631D9C032600B7ADAD;
+			productRefGroup = 75F5816D1D9C032600B7ADAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75F5816B1D9C032600B7ADAD /* bestway-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75F5816A1D9C032600B7ADAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */,
+				75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */,
+				75F581751D9C032600B7ADAD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75F581681D9C032600B7ADAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75F581721D9C032600B7ADAD /* ViewController.swift in Sources */,
+				75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75F581731D9C032600B7ADAD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75F581741D9C032600B7ADAD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75F581791D9C032600B7ADAD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75F5817C1D9C032600B7ADAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		75F5817D1D9C032600B7ADAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		75F5817F1D9C032600B7ADAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
+				INFOPLIST_FILE = "bestway-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ESGI.bestway-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		75F581801D9C032600B7ADAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
+				INFOPLIST_FILE = "bestway-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ESGI.bestway-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75F581671D9C032600B7ADAD /* Build configuration list for PBXProject "bestway-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75F5817C1D9C032600B7ADAD /* Debug */,
+				75F5817D1D9C032600B7ADAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75F5817E1D9C032600B7ADAD /* Build configuration list for PBXNativeTarget "bestway-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75F5817F1D9C032600B7ADAD /* Debug */,
+				75F581801D9C032600B7ADAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75F581641D9C032600B7ADAD /* Project object */;
+}
