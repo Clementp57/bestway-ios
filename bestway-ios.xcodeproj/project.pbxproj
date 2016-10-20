@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D3A82371DB8EE4700507DE9 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3A82361DB8EE4700507DE9 /* LoginView.xib */; };
+		6D3A82391DB8EE7400507DE9 /* PreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3A82381DB8EE7400507DE9 /* PreferencesView.xib */; };
+		6D3A823B1DB8EE7D00507DE9 /* ResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3A823A1DB8EE7D00507DE9 /* ResultsView.xib */; };
+		6D3A823D1DB8EE9300507DE9 /* InputsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D3A823C1DB8EE9300507DE9 /* InputsView.xib */; };
 		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
 		75F581721D9C032600B7ADAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F581711D9C032600B7ADAD /* ViewController.swift */; };
-		75F581751D9C032600B7ADAD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581731D9C032600B7ADAD /* Main.storyboard */; };
 		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
 		75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */; };
+		79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6D3A82361DB8EE4700507DE9 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		6D3A82381DB8EE7400507DE9 /* PreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesView.xib; sourceTree = "<group>"; };
+		6D3A823A1DB8EE7D00507DE9 /* ResultsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultsView.xib; sourceTree = "<group>"; };
+		6D3A823C1DB8EE9300507DE9 /* InputsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputsView.xib; sourceTree = "<group>"; };
 		75F5816C1D9C032600B7ADAD /* bestway-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bestway-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F5816F1D9C032600B7ADAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75F581711D9C032600B7ADAD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		75F581741D9C032600B7ADAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75F581761D9C032600B7ADAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75F581791D9C032600B7ADAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75F5817B1D9C032600B7ADAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +39,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4415E7E2DBF86C141D603927 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6D3A82351DB8EE4700507DE9 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6D3A82361DB8EE4700507DE9 /* LoginView.xib */,
+				6D3A82381DB8EE7400507DE9 /* PreferencesView.xib */,
+				6D3A823A1DB8EE7D00507DE9 /* ResultsView.xib */,
+				6D3A823C1DB8EE9300507DE9 /* InputsView.xib */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
 		75F581631D9C032600B7ADAD = {
 			isa = PBXGroup;
 			children = (
 				75F5816E1D9C032600B7ADAD /* bestway-ios */,
 				75F5816D1D9C032600B7ADAD /* Products */,
+				DC4B5E7C21CB792966A7F068 /* Pods */,
+				4415E7E2DBF86C141D603927 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +86,23 @@
 		75F5816E1D9C032600B7ADAD /* bestway-ios */ = {
 			isa = PBXGroup;
 			children = (
+				6D3A82351DB8EE4700507DE9 /* controllers */,
 				75F5816F1D9C032600B7ADAD /* AppDelegate.swift */,
 				75F581711D9C032600B7ADAD /* ViewController.swift */,
-				75F581731D9C032600B7ADAD /* Main.storyboard */,
 				75F581761D9C032600B7ADAD /* Assets.xcassets */,
 				75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */,
 				75F5817B1D9C032600B7ADAD /* Info.plist */,
 			);
 			path = "bestway-ios";
+			sourceTree = "<group>";
+		};
+		DC4B5E7C21CB792966A7F068 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */,
+				2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +112,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75F5817E1D9C032600B7ADAD /* Build configuration list for PBXNativeTarget "bestway-ios" */;
 			buildPhases = (
+				BAFA4DBA90019E519BC0606E /* [CP] Check Pods Manifest.lock */,
 				75F581681D9C032600B7ADAD /* Sources */,
 				75F581691D9C032600B7ADAD /* Frameworks */,
 				75F5816A1D9C032600B7ADAD /* Resources */,
+				C219E7B53AA3D368E50F7A2E /* [CP] Embed Pods Frameworks */,
+				045719CCAAB31E9490E84571 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,7 +140,7 @@
 				TargetAttributes = {
 					75F5816B1D9C032600B7ADAD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = FY6W72MUV4;
+						DevelopmentTeam = B6V5UMD87T;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -125,12 +169,63 @@
 			buildActionMask = 2147483647;
 			files = (
 				75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */,
+				6D3A82391DB8EE7400507DE9 /* PreferencesView.xib in Resources */,
 				75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */,
-				75F581751D9C032600B7ADAD /* Main.storyboard in Resources */,
+				6D3A823B1DB8EE7D00507DE9 /* ResultsView.xib in Resources */,
+				6D3A82371DB8EE4700507DE9 /* LoginView.xib in Resources */,
+				6D3A823D1DB8EE9300507DE9 /* InputsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		045719CCAAB31E9490E84571 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAFA4DBA90019E519BC0606E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C219E7B53AA3D368E50F7A2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		75F581681D9C032600B7ADAD /* Sources */ = {
@@ -145,14 +240,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		75F581731D9C032600B7ADAD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				75F581741D9C032600B7ADAD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -259,9 +346,10 @@
 		};
 		75F5817F1D9C032600B7ADAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ESGI.bestway-ios";
@@ -272,9 +360,10 @@
 		};
 		75F581801D9C032600B7ADAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ESGI.bestway-ios";
@@ -302,6 +391,7 @@
 				75F581801D9C032600B7ADAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
