@@ -15,6 +15,8 @@
 		6D6D68C01DB90049004EC4E1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */; };
 		75A08DAA1DD09C8700FBC7AF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A08DA91DD09C8600FBC7AF /* Alamofire.framework */; };
 		75A08DAC1DD0B10900FBC7AF /* BestwayClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */; };
+		75A08DAE1DD0B68500FBC7AF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A08DAD1DD0B68500FBC7AF /* LocationViewController.swift */; };
+		75A08DB01DD0B7E800FBC7AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */; };
 		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
 		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
 		75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */; };
@@ -32,6 +34,8 @@
 		6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		75A08DA91DD09C8600FBC7AF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/bestway-ios-bnjwylqvkfscbdeyjqfjdgqjpqbd/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestwayClient.swift; sourceTree = "<group>"; };
+		75A08DAD1DD0B68500FBC7AF /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		75F5816C1D9C032600B7ADAD /* bestway-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bestway-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F5816F1D9C032600B7ADAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75F581761D9C032600B7ADAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75A08DAA1DD09C8700FBC7AF /* Alamofire.framework in Frameworks */,
+				75A08DB01DD0B7E800FBC7AF /* MapKit.framework in Frameworks */,
 				79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,6 +61,7 @@
 		4415E7E2DBF86C141D603927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */,
 				75A08DA91DD09C8600FBC7AF /* Alamofire.framework */,
 				16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */,
 			);
@@ -102,6 +108,7 @@
 				75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */,
 				75F5817B1D9C032600B7ADAD /* Info.plist */,
 				75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */,
+				75A08DAD1DD0B68500FBC7AF /* LocationViewController.swift */,
 			);
 			path = "bestway-ios";
 			sourceTree = "<group>";
@@ -152,6 +159,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = FY6W72MUV4;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -244,6 +256,7 @@
 				6D6D68C01DB90049004EC4E1 /* PreferencesViewController.swift in Sources */,
 				6D6D68B21DB8FFB9004EC4E1 /* LoginViewController.swift in Sources */,
 				75A08DAC1DD0B10900FBC7AF /* BestwayClient.swift in Sources */,
+				75A08DAE1DD0B68500FBC7AF /* LocationViewController.swift in Sources */,
 				75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */,
 				6D6D68B81DB9000F004EC4E1 /* ResultsViewController.swift in Sources */,
 			);
