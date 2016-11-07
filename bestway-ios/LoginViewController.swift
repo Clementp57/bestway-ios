@@ -26,6 +26,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		
 		self.emailTextField.delegate = self
 		self.passwordTextField.delegate = self
+		
+		BestwayClient.shared.isLogged { (success) in
+			if success {
+				self.performSegue(withIdentifier: "LoginVCToNavigationController", sender: self)
+			}
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -109,23 +115,23 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 					self.sendRequest(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, isLogin: false)
 				}
 			} else {
-			let passwordAlert = UIAlertController(title: "Mot de passe", message: "Vous devez remplir le champs mot de passe !", preferredStyle: .alert)
-			passwordAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-				self.passwordTextField.becomeFirstResponder()
-			}))
-			self.present(passwordAlert, animated: true, completion: nil)
+				let passwordAlert = UIAlertController(title: "Mot de passe", message: "Vous devez remplir le champs mot de passe !", preferredStyle: .alert)
+				passwordAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+					self.passwordTextField.becomeFirstResponder()
+				}))
+				self.present(passwordAlert, animated: true, completion: nil)
 			}
 		} else {
-				let usernameAlert = UIAlertController(title: "Email", message: "Vous devez remplir le champs email !", preferredStyle: .alert)
-				usernameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-					self.emailTextField.becomeFirstResponder()
-				}))
-				self.present(usernameAlert, animated: true, completion: nil)
+			let usernameAlert = UIAlertController(title: "Email", message: "Vous devez remplir le champs email !", preferredStyle: .alert)
+			usernameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+				self.emailTextField.becomeFirstResponder()
+			}))
+			self.present(usernameAlert, animated: true, completion: nil)
 		}
 	}
 	
 	@IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-		self.resignFirstResponder()
+		self.view.endEditing(true)
 	}
 	
     // MARK: - Navigation
