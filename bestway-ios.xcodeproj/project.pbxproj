@@ -13,6 +13,7 @@
 		6D6D68B21DB8FFB9004EC4E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */; };
 		6D6D68B81DB9000F004EC4E1 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */; };
 		6D6D68C01DB90049004EC4E1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */; };
+		75A08DAA1DD09C8700FBC7AF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A08DA91DD09C8600FBC7AF /* Alamofire.framework */; };
 		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
 		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
 		75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */; };
@@ -28,6 +29,7 @@
 		6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		75A08DA91DD09C8600FBC7AF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/bestway-ios-bnjwylqvkfscbdeyjqfjdgqjpqbd/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		75F5816C1D9C032600B7ADAD /* bestway-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bestway-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F5816F1D9C032600B7ADAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75F581761D9C032600B7ADAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A08DAA1DD09C8700FBC7AF /* Alamofire.framework in Frameworks */,
 				79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,6 +54,7 @@
 		4415E7E2DBF86C141D603927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75A08DA91DD09C8600FBC7AF /* Alamofire.framework */,
 				16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */,
 			);
 			name = Frameworks;
@@ -143,7 +147,7 @@
 				TargetAttributes = {
 					75F5816B1D9C032600B7ADAD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B6V5UMD87T;
+						DevelopmentTeam = FY6W72MUV4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -353,10 +357,10 @@
 			baseConfigurationReference = 7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B6V5UMD87T;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.damienbannerot.bestway-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bestway-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -367,10 +371,10 @@
 			baseConfigurationReference = 2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B6V5UMD87T;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.damienbannerot.bestway-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bestway-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
