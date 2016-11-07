@@ -56,35 +56,9 @@ class LoginViewController: UIViewController {
 	}
 	
 	func sendRequest(withEmail email: String, password: String, isLogin: Bool) {
-		let json = ["email":email , "password": password]
-		if isLogin {// connexion
+       		if isLogin {// connexion
 			do {
-				let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-				
-				// create post request
-				let url = URL(string: "bestway.clementpeyrabere.net/public/login")
-				var request = URLRequest(url: url!)
-				request.httpMethod = "POST"
-				
-				// insert json data to the request
-				request.httpBody = jsonData
-				
-				
-				let task = URLSession.shared.dataTask(with: request){ data,response,error in
-					if error != nil{
-						print(error?.localizedDescription)
-						return
-					}
-					do {
-						let responseJSON = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-						print(responseJSON)
-						//TODO
-					} catch {
-						print("error")
-					}
-				}
-				
-				task.resume()
+                BestwayClient.shared.login(email: email, password: password);
 			} catch {
 				print("error")
 			}
