@@ -10,15 +10,20 @@ import Foundation
 import UIKit
 import MapKit
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager?
     
+    @IBOutlet var departureTextField: UITextField!
+    @IBOutlet var arrivalTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.startUpdatingLocation()
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,6 +31,23 @@ class LocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last
+        if location != nil {
+            let region  = MKCoordinateRegionMakeWithDistance((location?.coordinate)!, 1500, 1500)
+            self.mapView.setRegion(region, animated: true)
+            
+            let geocoder: CLGeocoder = CLGeocoder();
+            geocoder.reverseGeocodeLocation(location!) { (placemark, error) in
+                if error == nil {
+                    self.locationManager?.stopUpdatingLocation()
+                    self.departureTextField.text = (placemark?[0].subThoroughfare)! + " " + (placemark?[0].thoroughfare)!
+                    
+                    
+                }
+            }
+        }
+    }
     
     /*
      // MARK: - Navigation
