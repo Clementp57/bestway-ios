@@ -16,12 +16,12 @@
 		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
 		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
 		75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 75F581781D9C032600B7ADAD /* LaunchScreen.storyboard */; };
-		79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */; };
+		CC68527336C684A02DCDD19D /* Pods_bestway_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53CBCAA8CB529EE364B00C70 /* Pods_bestway_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.release.xcconfig"; sourceTree = "<group>"; };
+		53CBCAA8CB529EE364B00C70 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D6D68B11DB8FFB9004EC4E1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
 		6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */,
+				CC68527336C684A02DCDD19D /* Pods_bestway_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,7 +51,7 @@
 		4415E7E2DBF86C141D603927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */,
+				53CBCAA8CB529EE364B00C70 /* Pods_bestway_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,7 +143,7 @@
 				TargetAttributes = {
 					75F5816B1D9C032600B7ADAD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B6V5UMD87T;
+						DevelopmentTeam = FY6W72MUV4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -295,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -339,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -353,10 +353,11 @@
 			baseConfigurationReference = 7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B6V5UMD87T;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.damienbannerot.bestway-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bestway-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -367,10 +368,11 @@
 			baseConfigurationReference = 2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B6V5UMD87T;
+				DEVELOPMENT_TEAM = FY6W72MUV4;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.damienbannerot.bestway-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bestway-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
