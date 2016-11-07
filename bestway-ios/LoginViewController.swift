@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 	@IBOutlet weak var logTypeSegmentedControl: UISegmentedControl!
@@ -24,7 +24,8 @@ class LoginViewController: UIViewController {
 		NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardAppeared), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardDismissed), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 		
-		
+		self.emailTextField.delegate = self
+		self.passwordTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,16 +57,37 @@ class LoginViewController: UIViewController {
 	}
 	
 	func sendRequest(withEmail email: String, password: String, isLogin: Bool) {
-       		if isLogin {// connexion
-			do {
-                BestwayClient.shared.login(email: email, password: password);
-			} catch {
-				print("error")
-			}
+		if isLogin {// connexion
+			BestwayClient.shared.login(email: email, password: password, completionHandler: { (success, error) in
+				if success {
+					print("SUCCES")
+					self.performSegue(withIdentifier: "LoginVCToNavigationController", sender: self)
+				} else {
+					print("ERROR"+error)
+					let errorAlert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+					errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+						self.emailTextField.becomeFirstResponder()
+					}))
+					self.present(errorAlert, animated: true, completion: nil)
+				}
+			})
 		} else {// inscription
-			
+			BestwayClient.shared.register(email: email, password: password, completionHandler: { (success, error) in
+				if success {
+					print("SUCCES")
+					self.performSegue(withIdentifier: "LoginVCToNavigationController", sender: self)
+				} else {
+					print("ERROR"+error)
+					let errorAlert = UIAlertController(title: error, message: nil, preferredStyle: .alert)
+					errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+						self.emailTextField.becomeFirstResponder()
+					}))
+					self.present(errorAlert, animated: true, completion: nil)
+				}
+			})
 		}
 	}
+	
 	
 	
 	// MARK: - Actions
@@ -102,6 +124,10 @@ class LoginViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+		self.resignFirstResponder()
+	}
+	
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -110,6 +136,15 @@ class LoginViewController: UIViewController {
 		
     }
 	
+	// MARK: - UITextFieldDelegate
 	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		if textField == self.emailTextField {
+			self.passwordTextField.becomeFirstResponder()
+		} else if textField == self.passwordTextField {
+			self.tapOnSendButton(self.sendButton)
+		}
+		return true
+	}
 
 }
