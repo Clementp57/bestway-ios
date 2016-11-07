@@ -6,6 +6,8 @@
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
 	<string>Bestway</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Bestway souhaiterais accéder à votre position.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

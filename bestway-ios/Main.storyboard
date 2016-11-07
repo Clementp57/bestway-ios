@@ -116,18 +116,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="znr-dz-ZoG"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="znr-dz-ZoG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Départ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HYZ-1a-H3j">
+                                <rect key="frame" x="56.5" y="114" width="262.5" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="0.94464362157534243" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Arrivée" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pGR-Na-NJ3">
+                                <rect key="frame" x="56" y="152" width="262.5" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="0.94464362157534243" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pGR-Na-NJ3" firstAttribute="centerX" secondItem="bo1-qd-oHP" secondAttribute="centerX" id="4PT-EP-heE"/>
+                            <constraint firstItem="HYZ-1a-H3j" firstAttribute="width" secondItem="znr-dz-ZoG" secondAttribute="width" multiplier="0.7" id="6mT-1L-li4"/>
+                            <constraint firstItem="pGR-Na-NJ3" firstAttribute="width" secondItem="znr-dz-ZoG" secondAttribute="width" multiplier="0.7" id="6sn-M3-gP3"/>
                             <constraint firstItem="esS-Ga-agH" firstAttribute="top" secondItem="znr-dz-ZoG" secondAttribute="bottom" id="CwS-5E-mUb"/>
                             <constraint firstItem="znr-dz-ZoG" firstAttribute="top" secondItem="vO4-gz-4az" secondAttribute="bottom" id="Gfr-An-Yr6"/>
+                            <constraint firstItem="pGR-Na-NJ3" firstAttribute="top" secondItem="HYZ-1a-H3j" secondAttribute="bottom" constant="8" id="KPI-Q4-ey5"/>
                             <constraint firstItem="znr-dz-ZoG" firstAttribute="leading" secondItem="bo1-qd-oHP" secondAttribute="leading" id="PoL-cV-3Pf"/>
+                            <constraint firstItem="HYZ-1a-H3j" firstAttribute="top" secondItem="vO4-gz-4az" secondAttribute="bottom" constant="50" id="koG-Ef-8eY"/>
                             <constraint firstAttribute="trailing" secondItem="znr-dz-ZoG" secondAttribute="trailing" id="wao-Gz-jxF"/>
+                            <constraint firstItem="HYZ-1a-H3j" firstAttribute="centerX" secondItem="bo1-qd-oHP" secondAttribute="centerX" id="ynd-HG-lZr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Définissez votre trajet" id="JmX-ck-2is"/>
                     <connections>
+                        <outlet property="arrivalTextField" destination="pGR-Na-NJ3" id="25E-ha-VVW"/>
+                        <outlet property="departureTextField" destination="HYZ-1a-H3j" id="7Jy-xK-1bY"/>
                         <outlet property="mapView" destination="znr-dz-ZoG" id="g2U-lA-ol9"/>
                     </connections>
                 </viewController>
