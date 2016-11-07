@@ -157,7 +157,7 @@
 				TargetAttributes = {
 					75F5816B1D9C032600B7ADAD = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = FY6W72MUV4;
+						DevelopmentTeam = B6V5UMD87T;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -374,10 +374,10 @@
 			baseConfigurationReference = 7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bestway-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dab.bestway-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -388,10 +388,10 @@
 			baseConfigurationReference = 2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY6W72MUV4;
+				DEVELOPMENT_TEAM = B6V5UMD87T;
 				INFOPLIST_FILE = "bestway-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.bestway-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dab.bestway-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

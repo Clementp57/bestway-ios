@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OaS-wB-GtH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -97,14 +97,13 @@
                         <outlet property="passwordTextField" destination="N7D-iN-KoH" id="Cbm-dd-THT"/>
                         <outlet property="scrollViewBottomConstraint" destination="pgK-Le-7Rp" id="4Gg-oX-Bcm"/>
                         <outlet property="sendButton" destination="tME-iJ-hRL" id="ae9-Oi-2k9"/>
-                        <segue destination="BSC-TX-EaJ" kind="show" id="eEk-KX-6lS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4au-sY-3qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-114" y="-42"/>
         </scene>
-        <!--Location View Controller-->
+        <!--Définissez votre trajet-->
         <scene sceneID="4gs-sw-PkB">
             <objects>
                 <viewController id="P0b-xG-cCo" customClass="LocationViewController" customModule="bestway_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,39 +115,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYR-Ss-pe8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="znr-dz-ZoG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QYR-Ss-pe8" firstAttribute="top" secondItem="bo1-qd-oHP" secondAttribute="top" id="BWz-XX-Jss"/>
-                            <constraint firstAttribute="trailing" secondItem="QYR-Ss-pe8" secondAttribute="trailing" id="QJj-jv-3dg"/>
-                            <constraint firstItem="esS-Ga-agH" firstAttribute="top" secondItem="QYR-Ss-pe8" secondAttribute="bottom" id="aEh-GX-2at"/>
-                            <constraint firstItem="QYR-Ss-pe8" firstAttribute="leading" secondItem="bo1-qd-oHP" secondAttribute="leading" id="bcA-bn-3dn"/>
+                            <constraint firstItem="esS-Ga-agH" firstAttribute="top" secondItem="znr-dz-ZoG" secondAttribute="bottom" id="CwS-5E-mUb"/>
+                            <constraint firstItem="znr-dz-ZoG" firstAttribute="top" secondItem="vO4-gz-4az" secondAttribute="bottom" id="Gfr-An-Yr6"/>
+                            <constraint firstItem="znr-dz-ZoG" firstAttribute="leading" secondItem="bo1-qd-oHP" secondAttribute="leading" id="PoL-cV-3Pf"/>
+                            <constraint firstAttribute="trailing" secondItem="znr-dz-ZoG" secondAttribute="trailing" id="wao-Gz-jxF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="nd7-4y-Or5"/>
+                    <navigationItem key="navigationItem" title="Définissez votre trajet" id="JmX-ck-2is"/>
+                    <connections>
+                        <outlet property="mapView" destination="znr-dz-ZoG" id="g2U-lA-ol9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfR-vY-Xqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1703.2" y="-43.628185907046479"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ctd-3I-VbG">
+        <scene sceneID="ras-3E-g1a">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BSC-TX-EaJ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OaS-wB-GtH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cy1-uj-XHD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mtd-g0-nFy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="P0b-xG-cCo" kind="relationship" relationship="rootViewController" id="0hC-22-f4b"/>
+                        <segue destination="P0b-xG-cCo" kind="relationship" relationship="rootViewController" id="BEk-cL-SAS"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lEI-kq-RPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ImZ-qJ-xKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="764" y="-43.628185907046479"/>
         </scene>
