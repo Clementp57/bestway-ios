@@ -1,21 +1,12 @@
 PODS:
-  - RxSwift (3.0.0-rc.1)
+  - Alamofire (4.0.1)
 
 DEPENDENCIES:
-  - RxSwift (from `https://github.com/ReactiveX/RxSwift.git`)
-
-EXTERNAL SOURCES:
-  RxSwift:
-    :git: https://github.com/ReactiveX/RxSwift.git
-
-CHECKOUT OPTIONS:
-  RxSwift:
-    :commit: a778b10f94f82d37af6ae441372a23154044dab4
-    :git: https://github.com/ReactiveX/RxSwift.git
+  - Alamofire (~> 4.0)
 
 SPEC CHECKSUMS:
-  RxSwift: 00ffe5e4bc528e93765ccf04ab6408e39dd2a602
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
 
-PODFILE CHECKSUM: 3a3a1eaaa242285d1d74f7e927fec890fddde525
+PODFILE CHECKSUM: 192cc5d46d565c09bfb265836d6698cdb2525e6e
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.1.0.rc.2
