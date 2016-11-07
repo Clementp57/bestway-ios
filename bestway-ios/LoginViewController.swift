@@ -12,7 +12,7 @@ class LoginViewController: UIViewController {
 
 	@IBOutlet weak var scrollViewBottomConstraint: NSLayoutConstraint!
 	@IBOutlet weak var logTypeSegmentedControl: UISegmentedControl!
-	@IBOutlet weak var usernameTextField: UITextField!
+	@IBOutlet weak var emailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var sendButton: UIButton!
 	
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
 	// MARK: - Helpers
 	
 	func initializeUI() {
-		self.usernameTextField.text = ""
+		self.emailTextField.text = ""
 		self.passwordTextField.text = ""
 	}
 
@@ -104,7 +104,7 @@ class LoginViewController: UIViewController {
 	}
 	
 	@IBAction func tapOnSendButton(_ sender: UIButton) {
-		if self.usernameTextField.text != "" {
+		if self.emailTextField.text != "" {
 			if self.passwordTextField.text != "" {
 				if self.logTypeSegmentedControl.selectedSegmentIndex == 0 {// connexion
 					
@@ -118,9 +118,9 @@ class LoginViewController: UIViewController {
 			}))
 			self.present(passwordAlert, animated: true, completion: nil)
 		}
-		let usernameAlert = UIAlertController(title: "Nom d'utilisateur", message: "Vous devez remplir le champs nom d'utilisateur !", preferredStyle: .alert)
+		let usernameAlert = UIAlertController(title: "Email", message: "Vous devez remplir le champs email !", preferredStyle: .alert)
 		usernameAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-			self.usernameTextField.becomeFirstResponder()
+			self.emailTextField.becomeFirstResponder()
 		}))
 		self.present(usernameAlert, animated: true, completion: nil)
 	}

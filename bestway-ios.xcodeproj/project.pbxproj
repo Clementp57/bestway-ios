@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D159F221DD08A1100A8D205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D159F211DD08A1100A8D205 /* Main.storyboard */; };
 		6D6D68B21DB8FFB9004EC4E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */; };
-		6D6D68B31DB8FFB9004EC4E1 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6D68B11DB8FFB9004EC4E1 /* LoginViewController.xib */; };
 		6D6D68B81DB9000F004EC4E1 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */; };
 		6D6D68B91DB9000F004EC4E1 /* ResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6D68B71DB9000F004EC4E1 /* ResultsViewController.xib */; };
 		6D6D68C01DB90049004EC4E1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */; };
@@ -22,8 +22,8 @@
 /* Begin PBXFileReference section */
 		16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6D159F211DD08A1100A8D205 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "bestway-ios/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		6D6D68B11DB8FFB9004EC4E1 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController.xib; path = ../LoginViewController.xib; sourceTree = "<group>"; };
 		6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		6D6D68B71DB9000F004EC4E1 /* ResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ResultsViewController.xib; path = ../ResultsViewController.xib; sourceTree = "<group>"; };
 		6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +61,7 @@
 			children = (
 				6D6D68BF1DB90049004EC4E1 /* PreferencesViewController.xib */,
 				6D6D68B71DB9000F004EC4E1 /* ResultsViewController.xib */,
-				6D6D68B11DB8FFB9004EC4E1 /* LoginViewController.xib */,
+				6D159F211DD08A1100A8D205 /* Main.storyboard */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -174,7 +174,7 @@
 				75F5817A1D9C032600B7ADAD /* LaunchScreen.storyboard in Resources */,
 				6D6D68C11DB90049004EC4E1 /* PreferencesViewController.xib in Resources */,
 				75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */,
-				6D6D68B31DB8FFB9004EC4E1 /* LoginViewController.xib in Resources */,
+				6D159F221DD08A1100A8D205 /* Main.storyboard in Resources */,
 				6D6D68B91DB9000F004EC4E1 /* ResultsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
