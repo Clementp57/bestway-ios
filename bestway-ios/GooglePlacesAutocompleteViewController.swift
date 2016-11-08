@@ -86,9 +86,7 @@ class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDeleg
         return searchResults.count
     }
     
-    override func tableView(_ didSelectRowAttableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+   
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier: String = "DefaultCell";
