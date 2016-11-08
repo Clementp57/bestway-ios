@@ -17,6 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var sendButton: UIButton!
 	
+	let autoLog: Bool = false
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,10 +27,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		
 		self.emailTextField.delegate = self
 		self.passwordTextField.delegate = self
-		
-		BestwayClient.shared.isLogged { (success) in
-			if success {
-				self.performSegue(withIdentifier: "LoginVCToNavigationController", sender: self)
+		if self.autoLog {
+			BestwayClient.shared.isLogged { (success) in
+				if success {
+					self.performSegue(withIdentifier: "LoginVCToNavigationController", sender: self)
+				}
 			}
 		}
     }

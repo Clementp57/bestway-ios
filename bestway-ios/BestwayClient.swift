@@ -27,6 +27,18 @@ class BestwayClient {
 	
 	static let userTokenDefaultKey: String = "BESTWAY_TOKEN"
 	static let userIdDefaultKey: String = "BESTWAY_USER_ID"
+	
+	struct preferences {
+		var walking: Bool
+		var bicycling: Bool
+		var bus: Bool
+		var subway: Bool
+		var driving: Bool
+		var tram: Bool
+		var train: Bool
+	}
+	
+	var currentPreferences: BestwayClient.preferences?
     
     init() {
         
@@ -93,6 +105,65 @@ class BestwayClient {
 			completionHandler(false)
 		}
 
+	}
+	
+	public func getPreferences(completionHandler: @escaping (_ success: Bool, _ error: String, _ preferences: preferences?) -> Void) {
+		if let token = UserDefaults.standard.object(forKey: BestwayClient.userTokenDefaultKey) as? String, let userId = UserDefaults.standard.object(forKey: BestwayClient.userIdDefaultKey) as? String {
+			let headers: HTTPHeaders = [
+				"x-access-token": token,
+				"x-user-id": userId,
+				"Content-Type": "application/json"
+			]
+			Alamofire.request(BestwayClient.USER_PREF_ROUTE, method: .get, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+				if response.response!.statusCode == 418 {
+					self.currentPreferences = BestwayClient.preferences(walking: false, bicycling: false, bus: false, subway: false, driving: false, tram: false, train: false)
+					completionHandler(true, "success", self.currentPreferences!)
+				} else if response.response!.statusCode >= 400 {
+					completionHandler(false, "Informations invalides", nil)
+				} else {
+					let data = response.result.value as! [String: AnyObject]
+					if let preferences = data["userPreferences"] {
+						if let walking = preferences["walking"] as? Bool, let bicycling = preferences["bicycling"] as? Bool, let bus = preferences["bus"] as? Bool, let subway = preferences["subway"] as? Bool, let driving = preferences["driving"] as? Bool, let tram = preferences["tram"] as? Bool {
+							self.currentPreferences = BestwayClient.preferences(walking: walking, bicycling: bicycling, bus: bus, subway: subway, driving: driving, tram: tram, train: false)
+							completionHandler(true, "success", self.currentPreferences!)
+						} else {
+							completionHandler(false, "error", nil)
+						}
+					} else {
+						completionHandler(false, "error", nil)
+					}
+				}
+			}
+		} else {
+			completionHandler(false, "error", nil)
+		}
+	}
+	
+	public func savePreferences(bike: Bool, bus: Bool, walk: Bool, subway: Bool, car: Bool, tram: Bool, completionHandler: @escaping (_ success: Bool, _ error: String) -> Void) {
+		if let token = UserDefaults.standard.object(forKey: BestwayClient.userTokenDefaultKey) as? String, let userId = UserDefaults.standard.object(forKey: BestwayClient.userIdDefaultKey) as? String {
+			let headers: HTTPHeaders = [
+				"x-access-token": token,
+				"x-user-id": userId,
+				"Content-Type": "application/json"
+			]
+			let parameters: Parameters = [
+				"bicycling": bike,
+				"bus": bus,
+				"walking": walk,
+				"subway": subway,
+				"driving": car,
+				"tram": tram,
+				"train": false
+				]
+			self.currentPreferences = BestwayClient.preferences(walking: walk, bicycling: bike, bus: bus, subway: subway, driving: car, tram: tram, train: false)
+			Alamofire.request(BestwayClient.USER_PREF_ROUTE, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+				if response.response!.statusCode >= 400 {
+					completionHandler(false, "Informations invalides")
+				} else {
+					completionHandler(true, "Informations bien enregistrées")
+				}
+			}
+		}
 	}
 	
 }
