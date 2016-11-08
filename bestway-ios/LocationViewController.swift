@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MapKit
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate {
+class LocationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager?
@@ -31,6 +31,10 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         if location != nil {
@@ -42,11 +46,15 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate {
                 if error == nil {
                     self.locationManager?.stopUpdatingLocation()
                     self.departureTextField.text = (placemark?[0].subThoroughfare)! + " " + (placemark?[0].thoroughfare)!
-                    
-                    
                 }
             }
         }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let autocompleteController = GooglePlacesAutocompleteViewController(apiKey: "AIzaSyC8q1InpJSdgvAcdywBKwi7f1uKv-ehbwQ")
+        autocompleteController.modalPresentationStyle = .overCurrentContext
+        present(autocompleteController, animated: true, completion: nil)
     }
     
     /*
