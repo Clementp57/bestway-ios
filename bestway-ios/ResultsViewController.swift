@@ -20,6 +20,11 @@ class ResultsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	// MARK: - Helpers
+	
+	
+	
     
 
     /*
@@ -32,4 +37,28 @@ class ResultsViewController: UIViewController {
     }
     */
 
+}
+
+extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
+	
+	// MARK: - UITableViewDelegate
+	
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 1
+	}
+	
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		var cell = tableView.dequeueReusableCell(withIdentifier: "resultCell") as? ResultTableViewCell
+		if cell == nil {
+			cell = ResultTableViewCell(style: .default, reuseIdentifier: "resultCell")
+		}
+		
+		cell!.timeLabel.text = "test 2h19"
+		return cell!
+	}
+	
+	// MARK: - UITableViewDataSource
+	
+	
+	
 }

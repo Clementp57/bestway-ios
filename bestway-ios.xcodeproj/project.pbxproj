@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D06F77C1DD48A02002D3107 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */; };
 		6D159F221DD08A1100A8D205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D159F211DD08A1100A8D205 /* Main.storyboard */; };
 		6D6D68B21DB8FFB9004EC4E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */; };
 		6D6D68B81DB9000F004EC4E1 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		6D159F211DD08A1100A8D205 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "bestway-ios/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				75F5816F1D9C032600B7ADAD /* AppDelegate.swift */,
 				75F581761D9C032600B7ADAD /* Assets.xcassets */,
 				6D159F211DD08A1100A8D205 /* Main.storyboard */,
+				6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */,
 				75F5817B1D9C032600B7ADAD /* Info.plist */,
 				75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */,
 			);
@@ -266,6 +269,7 @@
 				75A08DAE1DD0B68500FBC7AF /* LocationViewController.swift in Sources */,
 				75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */,
 				7507FC481DD2556B0039E417 /* GooglePlacesAutocompleteViewController.swift in Sources */,
+				6D06F77C1DD48A02002D3107 /* ResultTableViewCell.swift in Sources */,
 				6D6D68B81DB9000F004EC4E1 /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
