@@ -11,7 +11,7 @@ import Alamofire
 
 class BestwayClient {
     
-    static var BASE_URL: String = "https://bestway.clementpeyrabere.net";
+    static var BASE_URL: String = "https://bestway.clementpeyrabere.net:8001";
     static var API_PREFIX: String = "/api/v1";
     
     // Mark : Public Routes
