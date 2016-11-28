@@ -12,6 +12,7 @@ import Alamofire
 class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
 
     static var BASE_GOOGLE_PLACES_API_URL = "https://maps.googleapis.com/maps/api/place/autocomplete/json?";
+    var delegate : PresentedViewControllerDelegate?
     
     @IBOutlet var uiSearchBar: UISearchBar!
     private var API_KEY: String?
@@ -31,6 +32,7 @@ class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDeleg
         searchResultsTableView.delegate = self;
         searchResultsTableView.dataSource = self;
         searchResultsTableView.register(UITableViewCell.self, forCellReuseIdentifier: "DefaultCell")
+        uiSearchBar.becomeFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,6 +61,8 @@ class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDeleg
         var requestURL: String = GooglePlacesAutocompleteViewController.BASE_GOOGLE_PLACES_API_URL
         requestURL += "key=" + API_KEY!
         requestURL += "&input=" + searchText.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+        requestURL += "&location=48.859690,2.344776"
+        requestURL += "&radius=50000"
         
         Alamofire.request(requestURL).responseJSON(completionHandler: { response in
             let data = response.result.value as! [String: AnyObject]
@@ -86,7 +90,10 @@ class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDeleg
         return searchResults.count
     }
     
-   
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.acceptData(data: self.searchResults[indexPath.row])
+        self.dismiss(animated: true, completion: nil)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier: String = "DefaultCell";

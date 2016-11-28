@@ -20,11 +20,9 @@
 		75A08DB01DD0B7E800FBC7AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */; };
 		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
 		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
-		79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.release.xcconfig"; sourceTree = "<group>"; };
 		6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		6D159F211DD08A1100A8D205 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "bestway-ios/Main.storyboard"; sourceTree = SOURCE_ROOT; };
@@ -33,7 +31,6 @@
 		6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		7507FC451DD2556B0039E417 /* GooglePlacesAutocompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocompleteViewController.swift; sourceTree = "<group>"; };
 		7507FC461DD2556B0039E417 /* GooglePlacesAutocompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocompleteViewController.xib; sourceTree = "<group>"; };
-		75772CB81DD0D1B0004A980B /* GooglePlacesAutocomplete.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlacesAutocomplete.framework; path = "Pods/../build/Debug-iphoneos/GooglePlacesAutocomplete/GooglePlacesAutocomplete.framework"; sourceTree = "<group>"; };
 		75A08DA91DD09C8600FBC7AF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/bestway-ios-bnjwylqvkfscbdeyjqfjdgqjpqbd/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestwayClient.swift; sourceTree = "<group>"; };
 		75A08DAD1DD0B68500FBC7AF /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -52,7 +49,6 @@
 			files = (
 				75A08DAA1DD09C8700FBC7AF /* Alamofire.framework in Frameworks */,
 				75A08DB01DD0B7E800FBC7AF /* MapKit.framework in Frameworks */,
-				79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +58,8 @@
 		4415E7E2DBF86C141D603927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75772CB81DD0D1B0004A980B /* GooglePlacesAutocomplete.framework */,
 				75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */,
 				75A08DA91DD09C8600FBC7AF /* Alamofire.framework */,
-				16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

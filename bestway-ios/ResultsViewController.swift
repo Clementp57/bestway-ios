@@ -7,11 +7,17 @@
 //
 
 import UIKit
+import MapKit
 
 class ResultsViewController: UIViewController {
+    
+    var departurePoint: MKMapPoint?
+    var arrivalPoint: MKMapPoint?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(departurePoint, arrivalPoint);
 
         // Do any additional setup after loading the view.
     }

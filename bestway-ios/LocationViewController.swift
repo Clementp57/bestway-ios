@@ -10,13 +10,23 @@ import Foundation
 import UIKit
 import MapKit
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+protocol PresentedViewControllerDelegate {
+    func acceptData(data: String!)
+}
+
+class LocationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, PresentedViewControllerDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager?
     
     @IBOutlet var departureTextField: UITextField!
     @IBOutlet var arrivalTextField: UITextField!
+    @IBOutlet var goButton: UIButton!
+    
+    var departurePoint: MKMapPoint = MKMapPoint();
+    var arrivalPoint: MKMapPoint = MKMapPoint();
+    
+    private var didEditArrival: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,19 +62,63 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        if textField == self.arrivalTextField {
+            self.didEditArrival = true
+        } else {
+            self.didEditArrival = false
+        }
         let autocompleteController = GooglePlacesAutocompleteViewController(apiKey: "AIzaSyC8q1InpJSdgvAcdywBKwi7f1uKv-ehbwQ")
         autocompleteController.modalPresentationStyle = .overCurrentContext
+        autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func acceptData(data: String!) {
+        if(didEditArrival)! {
+            self.arrivalTextField.text = data
+        } else {
+            self.departureTextField.text = data
+        }
+        if(self.arrivalTextField.text != "" && self.departureTextField.text != "") {
+            self.goButton.isEnabled = true;
+        }
+    }
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "showResults") {
+            let resultsController: ResultsViewController = segue.destination as! ResultsViewController
+            resultsController.departurePoint = self.departurePoint
+            resultsController.arrivalPoint = self.arrivalPoint
+        }
+    }
+    
+    @IBAction func onGoButtonPressed(_ sender: Any) {
+        let geocoder: CLGeocoder = CLGeocoder();
+        
+        geocoder.geocodeAddressString(self.departureTextField.text!, completionHandler: { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0] {
+                    self.departurePoint.x = (placemark.location?.coordinate.latitude)!
+                    self.departurePoint.y = (placemark.location?.coordinate.latitude)!
+                }
+                
+                geocoder.geocodeAddressString(self.arrivalTextField.text!, completionHandler: { (placemarks, error) in
+                    if error == nil {
+                        if let placemark = placemarks?[0] {
+                            self.arrivalPoint.x = (placemark.location?.coordinate.latitude)!
+                            self.arrivalPoint.y = (placemark.location?.coordinate.latitude)!
+                        }
+                        
+                        self.performSegue(withIdentifier: "showResults", sender: self)
+                    }
+                });
+                
+            }
+        });
+    }
     
 }
