@@ -37,6 +37,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yt-J8-eec">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="aRM-oo-Bdq"/>
+                                </constraints>
                                 <items>
                                     <navigationItem id="Xl4-w4-gfs"/>
                                 </items>
@@ -45,10 +48,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7Yt-J8-eec" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="0fm-I7-i0e"/>
+                            <constraint firstItem="7Yt-J8-eec" firstAttribute="top" secondItem="cjO-AS-Kpf" secondAttribute="top" id="5Sx-GU-fQn"/>
                             <constraint firstItem="2uI-t8-6ga" firstAttribute="centerX" secondItem="cjO-AS-Kpf" secondAttribute="centerX" id="6x6-fI-fxm"/>
                             <constraint firstItem="7Yt-J8-eec" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="T8H-pJ-f7P"/>
                             <constraint firstItem="Tuf-LB-db7" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="TIA-iC-fSe"/>
-                            <constraint firstItem="7Yt-J8-eec" firstAttribute="top" secondItem="Z2b-Su-0Ba" secondAttribute="bottom" id="TyX-oQ-vp7"/>
                             <constraint firstItem="BFa-2y-7GJ" firstAttribute="top" secondItem="7Yt-J8-eec" secondAttribute="bottom" constant="50" id="ZIt-8P-eEM"/>
                             <constraint firstItem="BFa-2y-7GJ" firstAttribute="width" secondItem="cjO-AS-Kpf" secondAttribute="width" multiplier="0.7" id="Zb7-0k-Wmh"/>
                             <constraint firstAttribute="trailing" secondItem="7Yt-J8-eec" secondAttribute="trailing" id="Zba-E6-db9"/>
@@ -88,7 +91,7 @@
                                     <constraint firstAttribute="height" constant="64" id="Gbw-2F-FpF"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem id="2fn-v0-x31"/>
+                                    <navigationItem title="Bienvenue" id="2fn-v0-x31"/>
                                 </items>
                             </navigationBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLH-6D-H54">
@@ -101,7 +104,7 @@
                                                 <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tME-iJ-hRL">
-                                                <state key="normal" title="envoyer"/>
+                                                <state key="normal" title="Connexion"/>
                                                 <connections>
                                                     <action selector="tapOnSendButton:" destination="ns9-jQ-UOG" eventType="touchUpInside" id="6UY-tV-JWo"/>
                                                 </connections>
@@ -167,7 +170,7 @@
                         <outlet property="passwordTextField" destination="N7D-iN-KoH" id="Cbm-dd-THT"/>
                         <outlet property="scrollViewBottomConstraint" destination="pgK-Le-7Rp" id="4Gg-oX-Bcm"/>
                         <outlet property="sendButton" destination="tME-iJ-hRL" id="ae9-Oi-2k9"/>
-                        <segue destination="WVY-Bw-227" kind="show" identifier="LoginVCToNavigationController" animates="NO" id="udy-h9-uxA"/>
+                        <segue destination="WVY-Bw-227" kind="show" identifier="LoginVCToNavigationController" id="udy-h9-uxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4au-sY-3qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,16 +213,28 @@
                                     <outlet property="delegate" destination="P0b-xG-cCo" id="x3G-o8-TZw"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" alpha="0.84999999999999998" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvk-k5-hWh">
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Go !">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="7uy-8G-6bO" kind="show" identifier="showResults" id="QA2-ni-Wk1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pGR-Na-NJ3" firstAttribute="centerX" secondItem="bo1-qd-oHP" secondAttribute="centerX" id="4PT-EP-heE"/>
+                            <constraint firstItem="esS-Ga-agH" firstAttribute="top" secondItem="yvk-k5-hWh" secondAttribute="bottom" constant="70" id="5Wg-s1-v9S"/>
                             <constraint firstItem="HYZ-1a-H3j" firstAttribute="width" secondItem="znr-dz-ZoG" secondAttribute="width" multiplier="0.7" id="6mT-1L-li4"/>
                             <constraint firstItem="pGR-Na-NJ3" firstAttribute="width" secondItem="znr-dz-ZoG" secondAttribute="width" multiplier="0.7" id="6sn-M3-gP3"/>
                             <constraint firstItem="esS-Ga-agH" firstAttribute="top" secondItem="znr-dz-ZoG" secondAttribute="bottom" id="CwS-5E-mUb"/>
                             <constraint firstItem="znr-dz-ZoG" firstAttribute="top" secondItem="vO4-gz-4az" secondAttribute="bottom" id="Gfr-An-Yr6"/>
                             <constraint firstItem="pGR-Na-NJ3" firstAttribute="top" secondItem="HYZ-1a-H3j" secondAttribute="bottom" constant="8" id="KPI-Q4-ey5"/>
                             <constraint firstItem="znr-dz-ZoG" firstAttribute="leading" secondItem="bo1-qd-oHP" secondAttribute="leading" id="PoL-cV-3Pf"/>
+                            <constraint firstItem="yvk-k5-hWh" firstAttribute="width" secondItem="bo1-qd-oHP" secondAttribute="width" multiplier="0.7" id="UEP-Eg-cBS"/>
+                            <constraint firstItem="yvk-k5-hWh" firstAttribute="centerX" secondItem="bo1-qd-oHP" secondAttribute="centerX" id="kGG-7Q-0Y0"/>
                             <constraint firstItem="HYZ-1a-H3j" firstAttribute="top" secondItem="vO4-gz-4az" secondAttribute="bottom" constant="50" id="koG-Ef-8eY"/>
                             <constraint firstAttribute="trailing" secondItem="znr-dz-ZoG" secondAttribute="trailing" id="wao-Gz-jxF"/>
                             <constraint firstItem="HYZ-1a-H3j" firstAttribute="centerX" secondItem="bo1-qd-oHP" secondAttribute="centerX" id="ynd-HG-lZr"/>
@@ -229,6 +244,7 @@
                     <connections>
                         <outlet property="arrivalTextField" destination="pGR-Na-NJ3" id="25E-ha-VVW"/>
                         <outlet property="departureTextField" destination="HYZ-1a-H3j" id="7Jy-xK-1bY"/>
+                        <outlet property="goButton" destination="yvk-k5-hWh" id="Ktq-jh-fEQ"/>
                         <outlet property="mapView" destination="znr-dz-ZoG" id="g2U-lA-ol9"/>
                     </connections>
                 </viewController>
@@ -390,7 +406,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vrv-C3-57g" id="oW8-XK-WT2">
-                                            <frame key="frameInset" width="375" height="59"/>
+                                            <frame key="frameInset" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-I3-7M3">
@@ -500,6 +516,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="udy-h9-uxA"/>
+        <segue reference="upJ-rD-Sxz"/>
     </inferredMetricsTieBreakers>
 </document>

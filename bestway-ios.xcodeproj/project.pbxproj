@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6D06F77C1DD48A02002D3107 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */; };
-		6D159F221DD08A1100A8D205 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D159F211DD08A1100A8D205 /* Main.storyboard */; };
 		6D3869AC1DED867900E91498 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3869AB1DED867900E91498 /* LaunchScreen.storyboard */; };
 		6D3869CE1DED8BFC00E91498 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3869CD1DED8BFC00E91498 /* InitialViewController.swift */; };
+		6D386A2F1DEDB28F00E91498 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D386A2E1DEDB28F00E91498 /* Main.storyboard */; };
 		6D6D68B21DB8FFB9004EC4E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */; };
 		6D6D68B81DB9000F004EC4E1 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */; };
 		6D6D68C01DB90049004EC4E1 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */; };
@@ -20,44 +20,64 @@
 		75A08DAC1DD0B10900FBC7AF /* BestwayClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */; };
 		75A08DAE1DD0B68500FBC7AF /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A08DAD1DD0B68500FBC7AF /* LocationViewController.swift */; };
 		75A08DB01DD0B7E800FBC7AF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */; };
+		75D13E981DED93D9003D3103 /* bestway_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D13E971DED93D9003D3103 /* bestway_iosTests.swift */; };
 		75F581701D9C032600B7ADAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F5816F1D9C032600B7ADAD /* AppDelegate.swift */; };
 		75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75F581761D9C032600B7ADAD /* Assets.xcassets */; };
-		79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */; };
+		8E75201CE8DA49CBDDBE890B /* Pods_bestway_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9CA8576052F37D6ADC8189 /* Pods_bestway_ios.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		75D13E9A1DED93D9003D3103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75F581641D9C032600B7ADAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75F5816B1D9C032600B7ADAD;
+			remoteInfo = "bestway-ios";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A89881B1A755F4E804C49D2 /* Pods-bestway-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.release.xcconfig"; sourceTree = "<group>"; };
 		6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
-		6D159F211DD08A1100A8D205 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "bestway-ios/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		6D3869AB1DED867900E91498 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D3869CD1DED8BFC00E91498 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		6D386A2E1DEDB28F00E91498 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6D6D68B01DB8FFB9004EC4E1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6D6D68B61DB9000F004EC4E1 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		6D6D68BE1DB90049004EC4E1 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		6DEC2F4E1DEC6F4B00B6F1B6 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/bestway-ios-awgbbrtewqvjpkcshhgoywcjrrea/Build/Products/Debug-iphoneos/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		7507FC451DD2556B0039E417 /* GooglePlacesAutocompleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocompleteViewController.swift; sourceTree = "<group>"; };
 		7507FC461DD2556B0039E417 /* GooglePlacesAutocompleteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocompleteViewController.xib; sourceTree = "<group>"; };
-		75772CB81DD0D1B0004A980B /* GooglePlacesAutocomplete.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlacesAutocomplete.framework; path = "Pods/../build/Debug-iphoneos/GooglePlacesAutocomplete/GooglePlacesAutocomplete.framework"; sourceTree = "<group>"; };
 		75A08DA91DD09C8600FBC7AF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../../Library/Developer/Xcode/DerivedData/bestway-ios-bnjwylqvkfscbdeyjqfjdgqjpqbd/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestwayClient.swift; sourceTree = "<group>"; };
 		75A08DAD1DD0B68500FBC7AF /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		75D13E951DED93D9003D3103 /* bestway-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bestway-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		75D13E971DED93D9003D3103 /* bestway_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestway_iosTests.swift; sourceTree = "<group>"; };
+		75D13E991DED93D9003D3103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75F5816C1D9C032600B7ADAD /* bestway-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bestway-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F5816F1D9C032600B7ADAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75F581761D9C032600B7ADAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75F5817B1D9C032600B7ADAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C87C1DDDFDF510BE923BE4B /* Pods-bestway-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bestway-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bestway-ios/Pods-bestway-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		9E9CA8576052F37D6ADC8189 /* Pods_bestway_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bestway_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		75D13E921DED93D9003D3103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75F581691D9C032600B7ADAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6DEC2F4F1DEC6F4B00B6F1B6 /* Alamofire.framework in Frameworks */,
 				75A08DB01DD0B7E800FBC7AF /* MapKit.framework in Frameworks */,
-				79640EC4BA12C8FFF262C6A0 /* Pods_bestway_ios.framework in Frameworks */,
+				8E75201CE8DA49CBDDBE890B /* Pods_bestway_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,10 +88,9 @@
 			isa = PBXGroup;
 			children = (
 				6DEC2F4E1DEC6F4B00B6F1B6 /* Alamofire.framework */,
-				75772CB81DD0D1B0004A980B /* GooglePlacesAutocomplete.framework */,
 				75A08DAF1DD0B7E800FBC7AF /* MapKit.framework */,
 				75A08DA91DD09C8600FBC7AF /* Alamofire.framework */,
-				16ABF15424C9CC5186C3EDB0 /* Pods_bestway_ios.framework */,
+				9E9CA8576052F37D6ADC8189 /* Pods_bestway_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,10 +116,20 @@
 			name = controllers;
 			sourceTree = "<group>";
 		};
+		75D13E961DED93D9003D3103 /* bestway-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				75D13E971DED93D9003D3103 /* bestway_iosTests.swift */,
+				75D13E991DED93D9003D3103 /* Info.plist */,
+			);
+			path = "bestway-iosTests";
+			sourceTree = "<group>";
+		};
 		75F581631D9C032600B7ADAD = {
 			isa = PBXGroup;
 			children = (
 				75F5816E1D9C032600B7ADAD /* bestway-ios */,
+				75D13E961DED93D9003D3103 /* bestway-iosTests */,
 				75F5816D1D9C032600B7ADAD /* Products */,
 				DC4B5E7C21CB792966A7F068 /* Pods */,
 				4415E7E2DBF86C141D603927 /* Frameworks */,
@@ -111,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				75F5816C1D9C032600B7ADAD /* bestway-ios.app */,
+				75D13E951DED93D9003D3103 /* bestway-iosTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,8 +152,8 @@
 				750335FD1DD257100058C0E7 /* googlePlacesAutocomplete */,
 				75F5816F1D9C032600B7ADAD /* AppDelegate.swift */,
 				75F581761D9C032600B7ADAD /* Assets.xcassets */,
-				6D159F211DD08A1100A8D205 /* Main.storyboard */,
 				6D3869AB1DED867900E91498 /* LaunchScreen.storyboard */,
+				6D386A2E1DEDB28F00E91498 /* Main.storyboard */,
 				6D06F77B1DD48A02002D3107 /* ResultTableViewCell.swift */,
 				75F5817B1D9C032600B7ADAD /* Info.plist */,
 				75A08DAB1DD0B10900FBC7AF /* BestwayClient.swift */,
@@ -143,6 +173,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		75D13E941DED93D9003D3103 /* bestway-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75D13E9E1DED93D9003D3103 /* Build configuration list for PBXNativeTarget "bestway-iosTests" */;
+			buildPhases = (
+				75D13E911DED93D9003D3103 /* Sources */,
+				75D13E921DED93D9003D3103 /* Frameworks */,
+				75D13E931DED93D9003D3103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75D13E9B1DED93D9003D3103 /* PBXTargetDependency */,
+			);
+			name = "bestway-iosTests";
+			productName = "bestway-iosTests";
+			productReference = 75D13E951DED93D9003D3103 /* bestway-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		75F5816B1D9C032600B7ADAD /* bestway-ios */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75F5817E1D9C032600B7ADAD /* Build configuration list for PBXNativeTarget "bestway-ios" */;
@@ -169,10 +217,16 @@
 		75F581641D9C032600B7ADAD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = ESGI;
 				TargetAttributes = {
+					75D13E941DED93D9003D3103 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = FY6W72MUV4;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 75F5816B1D9C032600B7ADAD;
+					};
 					75F5816B1D9C032600B7ADAD = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = B6V5UMD87T;
@@ -199,21 +253,28 @@
 			projectRoot = "";
 			targets = (
 				75F5816B1D9C032600B7ADAD /* bestway-ios */,
+				75D13E941DED93D9003D3103 /* bestway-iosTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		75D13E931DED93D9003D3103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75F5816A1D9C032600B7ADAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */,
-				6D159F221DD08A1100A8D205 /* Main.storyboard in Resources */,
+				6D386A2F1DEDB28F00E91498 /* Main.storyboard in Resources */,
 				75F581771D9C032600B7ADAD /* Assets.xcassets in Resources */,
 				6D3869AC1DED867900E91498 /* LaunchScreen.storyboard in Resources */,
 				7507FC491DD2556B0039E417 /* GooglePlacesAutocompleteViewController.xib in Resources */,
-				6D159F221DD08A1100A8D205 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +329,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		75D13E911DED93D9003D3103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75D13E981DED93D9003D3103 /* bestway_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75F581681D9C032600B7ADAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,7 +355,45 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		75D13E9B1DED93D9003D3103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75F5816B1D9C032600B7ADAD /* bestway-ios */;
+			targetProxy = 75D13E9A1DED93D9003D3103 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		75D13E9C1DED93D9003D3103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FY6W72MUV4;
+				INFOPLIST_FILE = "bestway-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ESGI.bestway-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bestway-ios.app/bestway-ios";
+			};
+			name = Debug;
+		};
+		75D13E9D1DED93D9003D3103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FY6W72MUV4;
+				INFOPLIST_FILE = "bestway-iosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ESGI.bestway-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bestway-ios.app/bestway-ios";
+			};
+			name = Release;
+		};
 		75F5817C1D9C032600B7ADAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -421,6 +528,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		75D13E9E1DED93D9003D3103 /* Build configuration list for PBXNativeTarget "bestway-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75D13E9C1DED93D9003D3103 /* Debug */,
+				75D13E9D1DED93D9003D3103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		75F581671D9C032600B7ADAD /* Build configuration list for PBXProject "bestway-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
