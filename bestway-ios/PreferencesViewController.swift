@@ -63,7 +63,7 @@ class PreferencesViewController: UIViewController {
     }
 	
 	override func viewWillDisappear(_ animated: Bool) {
-		//self.savePreferences()
+		self.savePreferences()
 	}
 
     override func didReceiveMemoryWarning() {

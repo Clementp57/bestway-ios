@@ -12,11 +12,26 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+	let autoLog: Bool = true
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        return true
+		
+//		if self.autoLog {
+//			BestwayClient.shared.isLogged { (success) in
+//				self.window = UIWindow(frame: UIScreen.main.bounds)
+//				let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//				let initialViewController: UIViewController
+//				if success {
+//					initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+//				} else {
+//					initialViewController = storyboard.instantiateViewController(withIdentifier: "LocationViewController")
+//				}
+//				
+//				self.window?.rootViewController = initialViewController
+//			}
+//		}
+		return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
