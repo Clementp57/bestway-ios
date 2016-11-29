@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import MapKit
 
 class BestwayClient {
     
@@ -48,7 +49,6 @@ class BestwayClient {
         var token = "";
         var userId = "";
     }
-	
 	
 	public func login(email: String, password: String, completionHandler: @escaping (_ success: Bool, _ error: String) -> Void) {
 		let parameters: Parameters = [
@@ -165,5 +165,26 @@ class BestwayClient {
 			}
 		}
 	}
-	
+    
+    public func getTransports(departure: MKMapPoint, arrival: MKMapPoint, completionHandler: @escaping (_ success: Bool, _ error: String, _ result: AnyObject) -> Void) {
+        if let token = UserDefaults.standard.object(forKey: BestwayClient.userTokenDefaultKey) as? String, let userId = UserDefaults.standard.object(forKey: BestwayClient.userIdDefaultKey) as? String {
+            let headers: HTTPHeaders = [
+                "x-access-token": token,
+                "x-user-id": userId,
+                "Content-Type": "application/json"
+            ]
+            let parameters: Parameters = [
+                "departure" : [ "latitude" : departure.x, "longitude": departure.y],
+                "arrival": [ "latitude" : arrival.x, "longitude": arrival.y]
+            ];
+            debugPrint("PARAMETERS => ", parameters)
+            Alamofire.request(BestwayClient.TRANSPORT_ROUTE, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
+                if response.response!.statusCode >= 400 {
+                    completionHandler(false, "Error...", response as AnyObject)
+                } else {
+                    completionHandler(true, "", response as AnyObject)
+                }
+            }
+        }
+    }
 }

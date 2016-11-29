@@ -11,15 +11,54 @@ import MapKit
 
 class ResultsViewController: UIViewController {
     
-    var departurePoint: MKMapPoint?
-    var arrivalPoint: MKMapPoint?
+    var departureAddress: String?
+    var arrivalAddress: String?
+    
+    var departurePoint: MKMapPoint = MKMapPoint();
+    var arrivalPoint: MKMapPoint = MKMapPoint();
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(departurePoint, arrivalPoint);
-
-        // Do any additional setup after loading the view.
+    
+        self.geocodeTrip(completionHandler: {(success, error) in
+            if(success) {
+                BestwayClient.shared.getTransports(departure: self.departurePoint, arrival: self.arrivalPoint, completionHandler: { (success, error, result) in
+                    debugPrint(result);
+                });
+            } else {
+                // Print message or go back
+            }
+            
+        });
+    }
+    
+    private func geocodeTrip(completionHandler: @escaping (_ success: Bool, _ error: String) -> Void) -> Void {
+        let geocoder: CLGeocoder = CLGeocoder();
+        geocoder.geocodeAddressString(self.departureAddress!, completionHandler: { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0] {
+                    self.departurePoint.x = (placemark.location?.coordinate.latitude)!
+                    self.departurePoint.y = (placemark.location?.coordinate.longitude)!
+                }
+                
+                geocoder.geocodeAddressString(self.arrivalAddress!, completionHandler: { (placemarks, error) in
+                    if error == nil {
+                        if let placemark = placemarks?[0] {
+                            self.arrivalPoint.x = (placemark.location?.coordinate.latitude)!
+                            self.arrivalPoint.y = (placemark.location?.coordinate.longitude)!
+                        }
+                        
+                        completionHandler(true, "");
+                    } else {
+                        completionHandler(false, error.debugDescription);
+                    }
+                });
+                
+            } else {
+                completionHandler(false, error.debugDescription);
+            }
+        });
     }
 
     override func didReceiveMemoryWarning() {

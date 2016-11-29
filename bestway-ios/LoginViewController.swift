@@ -17,7 +17,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var sendButton: UIButton!
 	
-	let autoLog: Bool = false
+	let autoLog: Bool = true
 	
     override func viewDidLoad() {
         super.viewDidLoad()

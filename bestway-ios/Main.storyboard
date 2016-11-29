@@ -155,7 +155,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="onGoButtonPressed:" destination="P0b-xG-cCo" eventType="touchUpInside" id="LzG-Qy-HXt"/>
+                                    <segue destination="7uy-8G-6bO" kind="show" identifier="showResults" id="QA2-ni-Wk1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -180,9 +180,8 @@
                     <connections>
                         <outlet property="arrivalTextField" destination="pGR-Na-NJ3" id="25E-ha-VVW"/>
                         <outlet property="departureTextField" destination="HYZ-1a-H3j" id="7Jy-xK-1bY"/>
-                        <outlet property="goButton" destination="yvk-k5-hWh" id="Btg-uB-uGX"/>
+                        <outlet property="goButton" destination="yvk-k5-hWh" id="Ktq-jh-fEQ"/>
                         <outlet property="mapView" destination="znr-dz-ZoG" id="g2U-lA-ol9"/>
-                        <segue destination="7uy-8G-6bO" kind="show" identifier="showResults" id="MxN-ai-BRm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfR-vY-Xqt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -351,7 +350,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="zgF-Ve-fDT">
-                                <rect key="frame" x="30" y="60" width="315" height="29"/>
+                                <rect key="frame" x="30" y="104" width="315" height="29"/>
                                 <segments>
                                     <segment title="temps"/>
                                     <segment title="écologie"/>
@@ -359,14 +358,14 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gey-7d-IY8">
-                                <rect key="frame" x="0.0" y="128" width="375" height="539"/>
+                                <rect key="frame" x="0.0" y="172" width="375" height="495"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" rowHeight="60" id="Vrv-C3-57g" customClass="ResultTableViewCell" customModule="bestway_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vrv-C3-57g" id="oW8-XK-WT2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-I3-7M3">

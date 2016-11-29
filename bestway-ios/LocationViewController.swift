@@ -91,34 +91,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "showResults") {
             let resultsController: ResultsViewController = segue.destination as! ResultsViewController
-            resultsController.departurePoint = self.departurePoint
-            resultsController.arrivalPoint = self.arrivalPoint
+            resultsController.departureAddress = self.departureTextField.text
+            resultsController.arrivalAddress = self.arrivalTextField.text
         }
-    }
-    
-    @IBAction func onGoButtonPressed(_ sender: Any) {
-        let geocoder: CLGeocoder = CLGeocoder();
-        
-        geocoder.geocodeAddressString(self.departureTextField.text!, completionHandler: { (placemarks, error) in
-            if error == nil {
-                if let placemark = placemarks?[0] {
-                    self.departurePoint.x = (placemark.location?.coordinate.latitude)!
-                    self.departurePoint.y = (placemark.location?.coordinate.latitude)!
-                }
-                
-                geocoder.geocodeAddressString(self.arrivalTextField.text!, completionHandler: { (placemarks, error) in
-                    if error == nil {
-                        if let placemark = placemarks?[0] {
-                            self.arrivalPoint.x = (placemark.location?.coordinate.latitude)!
-                            self.arrivalPoint.y = (placemark.location?.coordinate.latitude)!
-                        }
-                        
-                        self.performSegue(withIdentifier: "showResults", sender: self)
-                    }
-                });
-                
-            }
-        });
     }
     
 }
