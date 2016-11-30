@@ -70,7 +70,12 @@ class ResultsViewController: UIViewController {
 		self.geocodeTrip(completionHandler: {(success, error) in
 			if(success) {
 				BestwayClient.shared.getTransports(departure: self.departurePoint, arrival: self.arrivalPoint, completionHandler: { (success, error, result) in
-					if let array = result as? [[String:Any]] {
+					if var array = result as? [[String:Any]] {
+						for (i, entry) in array.enumerated() {
+							if entry["transport"] as! String == "train" {
+								array.remove(at: i)
+							}
+						}
 						self.results = array;
 						self.firstTableView.reloadData()
 						self.secondTableView.reloadData()
@@ -89,14 +94,12 @@ class ResultsViewController: UIViewController {
 	// MARK: - Actions
 	
 	@IBAction func clikedOnSegmentedControl(_ sender: UISegmentedControl) {
-		
-		// TODO: - fix scrolling on click
 		if sender.selectedSegmentIndex == 0 {
-			self.pagerScrollView.scrollRectToVisible(self.firstTableView.frame, animated: true)
+			self.pagerScrollView.scrollRectToVisible(self.firstTableView.superview!.frame, animated: true)
 		} else if sender.selectedSegmentIndex == 1 {
-			self.pagerScrollView.scrollRectToVisible(self.secondTableView.frame, animated: true)
+			self.pagerScrollView.scrollRectToVisible(self.secondTableView.superview!.frame, animated: true)
 		} else if sender.selectedSegmentIndex == 2 {
-			self.pagerScrollView.scrollRectToVisible(self.thirdTableView.frame, animated: true)
+			self.pagerScrollView.scrollRectToVisible(self.thirdTableView.superview!.frame, animated: true)
 		}
 	}
 	
@@ -157,9 +160,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 			cell!.timeLabel.text = "\(sortedArray[indexPath.row]["transport"]!) - \(shownHours)h\(shownMinutes)"
 		}
 		
-		
 		// TODO: - set UI for cells
-		
 		return cell!
 	}
 	
@@ -173,14 +174,9 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ResultsViewController: UIScrollViewDelegate {
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		
-		// TODO: - fix scrolling up/down
-		
 		let pageWidth: CGFloat = scrollView.frame.size.width
 		let fractionalPage: Float = Float(scrollView.contentOffset.x)/Float(pageWidth)
-		print(fractionalPage)
 		let page: Int = lround(Double(fractionalPage));
 		self.segmentedControl.selectedSegmentIndex = page
-		
 	}
 }
