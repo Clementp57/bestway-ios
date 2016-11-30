@@ -16,21 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-		
-//		if self.autoLog {
-//			BestwayClient.shared.isLogged { (success) in
-//				self.window = UIWindow(frame: UIScreen.main.bounds)
-//				let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//				let initialViewController: UIViewController
-//				if success {
-//					initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-//				} else {
-//					initialViewController = storyboard.instantiateViewController(withIdentifier: "LocationViewController")
-//				}
-//				
-//				self.window?.rootViewController = initialViewController
-//			}
-//		}
+        
+        
+        // background 8	58	93	
+        // Font 224	243	228	
+        // 114	129	183	
+        // 53	42	163
+        
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 8/255, green: 58/255, blue: 93/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor(red: 224/255, green: 243/255, blue: 228/255, alpha: 1)
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 20)!, NSForegroundColorAttributeName:UIColor(red: 224/255, green: 243/255, blue: 228/255, alpha: 1)]
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red: 8/255, green: 58/255, blue: 93/255, alpha: 1)], for: .selected)
+        UITabBar.appearance().tintColor = UIColor(red: 8/255, green: 58/255, blue: 93/255, alpha: 1)
+
 		return true
     }
 

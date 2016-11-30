@@ -16,12 +16,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	@IBOutlet weak var emailTextField: UITextField!
 	@IBOutlet weak var passwordTextField: UITextField!
 	@IBOutlet weak var sendButton: UIButton!
+    @IBOutlet var backgroundImage: UIImageView!
 	
 	let autoLog: Bool = false
 	
     override func viewDidLoad() {
-        super.viewDidLoad()
-		
+        backgroundImage.image = UIImage(named: "backgroundImage")
+            //?.blurryImage(blurRadius: 1.5);
+        
 		NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardAppeared), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardDismissed), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
 		

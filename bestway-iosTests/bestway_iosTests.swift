@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import bestway_ios
 
 class bestway_iosTests: XCTestCase {
     
@@ -31,10 +30,6 @@ class bestway_iosTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
-    }
-    
-    func testLogin() {
-        //BestwayClient.login(<#T##BestwayClient#>)
     }
     
 }
