@@ -18,6 +18,7 @@ class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDeleg
     private var API_KEY: String?
     @IBOutlet var searchResultsTableView: UITableView!
     //@IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var navigationBar: UINavigationBar!
     
     var searchResults: [String] = [String]();
     
@@ -44,7 +45,7 @@ class GooglePlacesAutocompleteViewController: UIViewController, UISearchBarDeleg
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
