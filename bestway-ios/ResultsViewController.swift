@@ -115,6 +115,11 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
         case "subway":
             transportLabel = "Métro"
             transportIcon = #imageLiteral(resourceName: "metro")
+            
+            //if((sortedArray[indexPath.row]["transport"]["lines"] as! [Any]).count > 0) {
+                
+            //}
+            
             break
         case "tram":
             transportLabel = "Tramway"

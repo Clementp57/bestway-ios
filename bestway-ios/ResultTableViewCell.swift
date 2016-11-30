@@ -15,6 +15,7 @@ class ResultTableViewCell: UITableViewCell {
     @IBOutlet weak var transportLabel: UILabel!
     @IBOutlet var pictosContainer: UIView!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
