@@ -22,43 +22,13 @@ class ResultsViewController: UIViewController {
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	@IBOutlet weak var pagerScrollView: UIScrollView!
 	@IBOutlet weak var firstTableView: UITableView!
-	@IBOutlet weak var secondTableView: UITableView!
 	@IBOutlet weak var thirdTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
 		self.getResults()
     }
     
-    private func geocodeTrip(completionHandler: @escaping (_ success: Bool, _ error: String) -> Void) -> Void {
-        let geocoder: CLGeocoder = CLGeocoder();
-        geocoder.geocodeAddressString(self.departureAddress!, completionHandler: { (placemarks, error) in
-            if error == nil {
-                if let placemark = placemarks?[0] {
-                    self.departurePoint.x = (placemark.location?.coordinate.latitude)!
-                    self.departurePoint.y = (placemark.location?.coordinate.longitude)!
-                }
-                
-                geocoder.geocodeAddressString(self.arrivalAddress!, completionHandler: { (placemarks, error) in
-                    if error == nil {
-                        if let placemark = placemarks?[0] {
-                            self.arrivalPoint.x = (placemark.location?.coordinate.latitude)!
-                            self.arrivalPoint.y = (placemark.location?.coordinate.longitude)!
-                        }
-                        
-                        completionHandler(true, "");
-                    } else {
-                        completionHandler(false, error.debugDescription);
-                    }
-                });
-                
-            } else {
-                completionHandler(false, error.debugDescription);
-            }
-        });
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,27 +37,17 @@ class ResultsViewController: UIViewController {
 	// MARK: - Helpers
 	
 	func getResults() {
-		self.geocodeTrip(completionHandler: {(success, error) in
-			if(success) {
-				BestwayClient.shared.getTransports(departure: self.departurePoint, arrival: self.arrivalPoint, completionHandler: { (success, error, result) in
-					if var array = result as? [[String:Any]] {
-						for (i, entry) in array.enumerated() {
-							if entry["transport"] as! String == "train" {
-								array.remove(at: i)
-							}
-						}
-						self.results = array;
-						self.firstTableView.reloadData()
-						self.secondTableView.reloadData()
-						self.thirdTableView.reloadData()
-					}
-					
-				});
-			} else {
-				// Print message or go back
-				self.navigationController!.popViewController(animated: true)
-			}
-			
+        BestwayClient.shared.getTransports(departure: self.departurePoint, arrival: self.arrivalPoint, completionHandler: { (success, error, result) in
+            if var array = result as? [[String:Any]] {
+                for (i, entry) in array.enumerated() {
+                    if entry["transport"] as! String == "train" {
+                        array.remove(at: i)
+                    }
+                }
+                self.results = array;
+                self.firstTableView.reloadData()
+                self.thirdTableView.reloadData()
+            }
 		});
 	}
 	
@@ -97,8 +57,6 @@ class ResultsViewController: UIViewController {
 		if sender.selectedSegmentIndex == 0 {
 			self.pagerScrollView.scrollRectToVisible(self.firstTableView.superview!.frame, animated: true)
 		} else if sender.selectedSegmentIndex == 1 {
-			self.pagerScrollView.scrollRectToVisible(self.secondTableView.superview!.frame, animated: true)
-		} else if sender.selectedSegmentIndex == 2 {
 			self.pagerScrollView.scrollRectToVisible(self.thirdTableView.superview!.frame, animated: true)
 		}
 	}
@@ -131,15 +89,6 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 					return duration1 < duration2
 				}
 			}
-		case self.secondTableView://ecology sorting, NOT WORKING, currently using time sorting
-			if self.results.count > 0 {
-				sortedArray = self.results.sorted {
-					item1, item2 in
-					let duration1 = item1["duration"] as! Int
-					let duration2 = item2["duration"] as! Int
-					return duration1 < duration2
-				}
-			}
 		default://practical sorting
 			if self.results.count > 0 {
 				sortedArray = self.results.sorted {
@@ -150,14 +99,50 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 				}
 			}
 		}
+        
+        var transportLabel: String = "";
+        var transportIcon: UIImage = UIImage();
+        
+        switch(sortedArray[indexPath.row]["transport"] as! String) {
+        case "driving":
+            transportLabel = "Voiture"
+            transportIcon = #imageLiteral(resourceName: "car")
+            break
+        case "bus":
+            transportLabel = "Bus"
+            transportIcon = #imageLiteral(resourceName: "bus")
+            break
+        case "subway":
+            transportLabel = "Métro"
+            transportIcon = #imageLiteral(resourceName: "metro")
+            break
+        case "tram":
+            transportLabel = "Tramway"
+            transportIcon = #imageLiteral(resourceName: "train")
+            break
+        case "bicycling":
+            transportLabel = "Vélo"
+            transportIcon = #imageLiteral(resourceName: "bicycle")
+            break
+        case "walking":
+            transportLabel = "Marche"
+            transportIcon = #imageLiteral(resourceName: "shoe")
+            break
+        default:
+            break
+        }
+        
+        cell!.transportLabel.text = transportLabel
+        cell!.iconImageView.image = transportIcon
 		
 		let timeInMinutes: Int = (sortedArray[indexPath.row]["duration"] as! Int)/60
 		let shownHours: Int = timeInMinutes/60
 		let shownMinutes: Int = timeInMinutes-shownHours*60
+        
 		if shownMinutes<10 {
-			cell!.timeLabel.text = "\(sortedArray[indexPath.row]["transport"]!) - \(shownHours)h0\(shownMinutes)"
+			cell!.timeLabel.text = "\(shownHours)h0\(shownMinutes)"
 		} else {
-			cell!.timeLabel.text = "\(sortedArray[indexPath.row]["transport"]!) - \(shownHours)h\(shownMinutes)"
+			cell!.timeLabel.text = "\(shownHours)h\(shownMinutes)"
 		}
 		
 		// TODO: - set UI for cells

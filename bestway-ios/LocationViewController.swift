@@ -133,8 +133,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "showResults") {
             let resultsController: ResultsViewController = segue.destination as! ResultsViewController
-            resultsController.departureAddress = self.departureTextField.text
-            resultsController.arrivalAddress = self.arrivalTextField.text
+            resultsController.departurePoint = MKMapPoint(x: self.departureAnnotation.coordinate.latitude, y: self.departureAnnotation.coordinate.longitude)
+            resultsController.arrivalPoint = MKMapPoint(x: self.arrivalAnnotation.coordinate.latitude, y: self.arrivalAnnotation.coordinate.longitude)
         }
     }
     
