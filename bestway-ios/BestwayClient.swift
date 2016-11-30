@@ -179,11 +179,23 @@ class BestwayClient {
             ];
             debugPrint("PARAMETERS => ", parameters)
             Alamofire.request(BestwayClient.TRANSPORT_ROUTE, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { response in
-                if response.response!.statusCode >= 400 {
-                    completionHandler(false, "Error...", response as AnyObject)
-                } else {
-                    completionHandler(true, "", response as AnyObject)
-                }
+                if response.response!.statusCode < 400 {
+					if let data = response.result.value as? [String: AnyObject] {
+						if let response = data["response"] {
+							if let transportsArray = response["transportsArray"] {
+								completionHandler(true, "success", transportsArray as AnyObject)
+							} else {
+								completionHandler(false, "Error...", response as AnyObject)
+							}
+						} else {
+							completionHandler(false, "Error...", response as AnyObject)
+						}
+					} else {
+						completionHandler(false, "Error...", response as AnyObject)
+					}
+				} else {
+					completionHandler(false, "Error...", response as AnyObject)
+				}
             }
         }
     }

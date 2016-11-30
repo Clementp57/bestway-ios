@@ -14,7 +14,7 @@ protocol PresentedViewControllerDelegate {
     func acceptData(data: String!)
 }
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, PresentedViewControllerDelegate {
+class LocationViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, PresentedViewControllerDelegate, MKMapViewDelegate {
     
     @IBOutlet var mapView: MKMapView!
     var locationManager: CLLocationManager?
@@ -23,8 +23,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
     @IBOutlet var arrivalTextField: UITextField!
     @IBOutlet var goButton: UIButton!
     
-    var departurePoint: MKMapPoint = MKMapPoint();
-    var arrivalPoint: MKMapPoint = MKMapPoint();
+    var departureAnnotation: MKPointAnnotation = MKPointAnnotation();
+    var arrivalAnnotation: MKPointAnnotation = MKPointAnnotation();
     
     private var didEditArrival: Bool?
     
@@ -49,6 +49,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
         let location = locations.last
         if location != nil {
             let region  = MKCoordinateRegionMakeWithDistance((location?.coordinate)!, 1500, 1500)
+            departureAnnotation.coordinate.latitude = (location?.coordinate.latitude)!
+            departureAnnotation.coordinate.longitude = (location?.coordinate.longitude)!
+            
             self.mapView.setRegion(region, animated: true)
             
             let geocoder: CLGeocoder = CLGeocoder();
@@ -79,11 +82,50 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
         } else {
             self.departureTextField.text = data
         }
-        if(self.arrivalTextField.text != "" && self.departureTextField.text != "") {
-            self.goButton.isEnabled = true;
-        }
+        self.updateMap(didEditArrival!);
     }
     
+    func updateMap(_ didEditArrival: Bool) -> Void {
+        let address = didEditArrival ? self.arrivalTextField.text! : self.departureTextField.text!;
+        let geocoder = CLGeocoder();
+        geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
+            if error == nil {
+                if let placemark = placemarks?[0] {
+                    let point = MKPointAnnotation();
+                    point.coordinate.latitude = (placemark.location?.coordinate.latitude)!
+                    point.coordinate.longitude = (placemark.location?.coordinate.longitude)!
+                    point.title = address
+                    
+                    if(didEditArrival) {
+                        self.mapView.removeAnnotation(self.arrivalAnnotation);
+                        self.arrivalAnnotation.coordinate.latitude = point.coordinate.latitude
+                        self.arrivalAnnotation.coordinate.longitude = point.coordinate.longitude
+                        self.mapView.addAnnotation(self.arrivalAnnotation);
+                    } else {
+                        self.mapView.removeAnnotation(self.departureAnnotation);
+                        self.departureAnnotation.coordinate.latitude = point.coordinate.latitude
+                        self.departureAnnotation.coordinate.longitude = point.coordinate.longitude
+                        self.mapView.addAnnotation(self.departureAnnotation);
+                    }
+                    
+                    if(self.departureTextField.text! != "" && self.arrivalTextField.text! != "") {
+                        let center = MKPointAnnotation();
+                        center.coordinate.latitude = (self.departureAnnotation.coordinate.latitude + self.arrivalAnnotation.coordinate.latitude) / 2
+                        center.coordinate.longitude = (self.departureAnnotation.coordinate.longitude + self.arrivalAnnotation.coordinate.longitude) / 2
+                        
+                        let distanceMeters = CLLocation(latitude: self.departureAnnotation.coordinate.latitude, longitude: self.departureAnnotation.coordinate.longitude).distance(from: CLLocation(latitude: self.arrivalAnnotation.coordinate.latitude, longitude: self.arrivalAnnotation.coordinate.longitude)) + 1500
+                        
+                        let region = MKCoordinateRegionMakeWithDistance(center.coordinate, distanceMeters, distanceMeters)
+                        self.mapView.setRegion(region, animated: true)
+                        
+                        self.goButton.isEnabled = true;
+                    } else {
+                        self.goButton.isEnabled = false;
+                    }
+                }
+            }
+        });
+    }
     
     // MARK: - Navigation
     
