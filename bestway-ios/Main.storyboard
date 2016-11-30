@@ -378,7 +378,13 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhP-dS-1GD">
-                                                <state key="normal" title="sauvegarder les modifications"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="sEn-7O-acG"/>
+                                                </constraints>
+                                                <state key="normal" title="sauvegarder les modifications">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="saveParameters:" destination="XBo-Ry-7Vf" eventType="touchUpInside" id="Nlw-4S-T60"/>
                                                 </connections>
@@ -386,12 +392,12 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="PhP-dS-1GD" secondAttribute="bottom" constant="20" id="E0p-z9-WSg"/>
+                                            <constraint firstAttribute="bottom" secondItem="PhP-dS-1GD" secondAttribute="bottom" constant="30" id="E0p-z9-WSg"/>
                                             <constraint firstItem="rS8-uE-Bfi" firstAttribute="top" secondItem="wLH-Ha-RfY" secondAttribute="top" constant="16" id="egz-rn-6cm"/>
-                                            <constraint firstItem="PhP-dS-1GD" firstAttribute="trailing" secondItem="rS8-uE-Bfi" secondAttribute="trailing" id="hhF-0K-0Yj"/>
                                             <constraint firstItem="rS8-uE-Bfi" firstAttribute="width" secondItem="wLH-Ha-RfY" secondAttribute="width" multiplier="0.9" id="l5J-k9-xDD"/>
-                                            <constraint firstItem="PhP-dS-1GD" firstAttribute="top" secondItem="rS8-uE-Bfi" secondAttribute="bottom" constant="8" id="m3h-H2-IjT"/>
+                                            <constraint firstItem="PhP-dS-1GD" firstAttribute="top" secondItem="rS8-uE-Bfi" secondAttribute="bottom" constant="30" id="m3h-H2-IjT"/>
                                             <constraint firstItem="rS8-uE-Bfi" firstAttribute="centerX" secondItem="wLH-Ha-RfY" secondAttribute="centerX" id="qmb-ue-aAt"/>
+                                            <constraint firstItem="PhP-dS-1GD" firstAttribute="centerX" secondItem="wLH-Ha-RfY" secondAttribute="centerX" id="ubR-jh-56u"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -405,6 +411,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="PhP-dS-1GD" firstAttribute="width" secondItem="ylE-tH-WWq" secondAttribute="width" multiplier="0.7" id="LX9-U1-Z1M"/>
                             <constraint firstItem="u9V-oA-ztb" firstAttribute="top" secondItem="2tg-fz-bCy" secondAttribute="bottom" id="M3K-9b-7gh"/>
                             <constraint firstItem="2tg-fz-bCy" firstAttribute="leading" secondItem="ylE-tH-WWq" secondAttribute="leading" id="RuI-zQ-wrW"/>
                             <constraint firstItem="2tg-fz-bCy" firstAttribute="top" secondItem="yLt-IR-ij4" secondAttribute="bottom" id="TLD-a9-Caf"/>
@@ -634,7 +641,7 @@
                             <constraint firstAttribute="trailing" secondItem="EEJ-Km-t56" secondAttribute="trailing" id="W8g-N1-cSZ"/>
                             <constraint firstItem="EEJ-Km-t56" firstAttribute="leading" secondItem="RMI-ul-Le5" secondAttribute="leading" id="aec-vD-1NB"/>
                             <constraint firstAttribute="trailing" secondItem="zgF-Ve-fDT" secondAttribute="trailing" constant="30" id="ck4-kt-Tgb"/>
-                            <constraint firstItem="EEJ-Km-t56" firstAttribute="top" secondItem="zgF-Ve-fDT" secondAttribute="bottom" constant="40" id="dqW-8M-w95"/>
+                            <constraint firstItem="EEJ-Km-t56" firstAttribute="top" secondItem="zgF-Ve-fDT" secondAttribute="bottom" constant="30" id="dqW-8M-w95"/>
                             <constraint firstItem="Hyu-e9-p3X" firstAttribute="width" secondItem="RMI-ul-Le5" secondAttribute="width" id="fq3-6Y-P2y"/>
                             <constraint firstItem="zgF-Ve-fDT" firstAttribute="top" secondItem="NS8-An-LLF" secondAttribute="bottom" constant="40" id="ypQ-9x-KQl"/>
                         </constraints>
@@ -710,41 +717,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lS0-gD-4X4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2136.8000000000002" y="718.29085457271367"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="scq-No-1FQ">
-            <objects>
-                <viewController id="F3E-54-NSt" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="20o-Q7-L6l"/>
-                        <viewControllerLayoutGuide type="bottom" id="neo-kN-iuL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9C8-wp-DEl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WBa-vg-niI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CyC-7Q-yjA">
-            <objects>
-                <viewController id="WsN-vl-D8m" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bij-d2-w2S"/>
-                        <viewControllerLayoutGuide type="bottom" id="PrF-NG-bCj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2TY-74-A59">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V6c-va-H5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1097" y="-43"/>
         </scene>
     </scenes>
     <resources>
