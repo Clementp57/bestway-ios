@@ -19,14 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tuf-LB-db7">
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem id="eE6-b8-1q8"/>
-                                    <tabBarItem id="cc0-qi-Fyu"/>
-                                </items>
-                            </tabBar>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yt-J8-eec">
+                                <color key="backgroundColor" red="0.031372549019607843" green="0.22745098039215686" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="aRM-oo-Bdq"/>
                                 </constraints>
@@ -42,16 +36,11 @@
                             <constraint firstItem="7Yt-J8-eec" firstAttribute="top" secondItem="cjO-AS-Kpf" secondAttribute="top" id="5Sx-GU-fQn"/>
                             <constraint firstAttribute="trailing" secondItem="loV-2f-UO1" secondAttribute="trailing" id="Lxn-Ei-vWc"/>
                             <constraint firstItem="7Yt-J8-eec" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="T8H-pJ-f7P"/>
-                            <constraint firstItem="Tuf-LB-db7" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="TIA-iC-fSe"/>
+                            <constraint firstAttribute="bottom" secondItem="loV-2f-UO1" secondAttribute="bottom" id="ZQH-9e-eZ3"/>
                             <constraint firstAttribute="trailing" secondItem="7Yt-J8-eec" secondAttribute="trailing" id="Zba-E6-db9"/>
-                            <constraint firstAttribute="trailing" secondItem="Tuf-LB-db7" secondAttribute="trailing" id="dri-7V-JXt"/>
                             <constraint firstAttribute="trailing" secondItem="7Yt-J8-eec" secondAttribute="trailing" id="dy4-u8-xAF"/>
-                            <constraint firstItem="Tuf-LB-db7" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="fT1-fd-QSl"/>
-                            <constraint firstItem="Tuf-LB-db7" firstAttribute="top" secondItem="loV-2f-UO1" secondAttribute="bottom" id="iZv-kn-xC7"/>
-                            <constraint firstAttribute="trailing" secondItem="Tuf-LB-db7" secondAttribute="trailing" id="lJI-bP-CGs"/>
                             <constraint firstItem="loV-2f-UO1" firstAttribute="top" secondItem="7Yt-J8-eec" secondAttribute="bottom" id="n0I-4a-o9T"/>
                             <constraint firstItem="loV-2f-UO1" firstAttribute="leading" secondItem="cjO-AS-Kpf" secondAttribute="leading" id="u3D-cT-ZHG"/>
-                            <constraint firstItem="MUO-EN-jHb" firstAttribute="top" secondItem="Tuf-LB-db7" secondAttribute="bottom" id="x4E-tp-ezV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -661,11 +650,13 @@
             </objects>
             <point key="canvasLocation" x="4061.5999999999999" y="-43.628185907046479"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--trajet-->
         <scene sceneID="ras-3E-g1a">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OaS-wB-GtH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="Xbs-o3-f7L"/>
+                    <tabBarItem key="tabBarItem" title="trajet" image="map" id="Xbs-o3-f7L">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mtd-g0-nFy">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -699,11 +690,11 @@
             </objects>
             <point key="canvasLocation" x="1038" y="-42"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--paramètres-->
         <scene sceneID="ie7-73-Fdq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mqT-E2-4uA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="more" id="YUB-LB-KkC"/>
+                    <tabBarItem key="tabBarItem" title="paramètres" image="settings" id="YUB-LB-KkC"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kg3-aA-3hA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -721,8 +712,10 @@
     </scenes>
     <resources>
         <image name="backgroundImage" width="1088" height="816"/>
+        <image name="map" width="25" height="19"/>
+        <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="udy-h9-uxA"/>
+        <segue reference="upJ-rD-Sxz"/>
     </inferredMetricsTieBreakers>
 </document>

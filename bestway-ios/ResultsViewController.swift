@@ -171,7 +171,6 @@ extension ResultsViewController: UIScrollViewDelegate {
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
 		let pageWidth: CGFloat = scrollView.frame.size.width
 		let fractionalPage: Float = Float(scrollView.contentOffset.x)/Float(pageWidth)
-		print(fractionalPage)
 		let page: Int = lround(Double(fractionalPage));
 		self.segmentedControl.selectedSegmentIndex = page
 	}
