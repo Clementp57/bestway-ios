@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'bestway-ios' do
 	pod 'Alamofire', '~> 4.0'
+	pod 'M13Checkbox'
 end
