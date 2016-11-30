@@ -159,8 +159,9 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 		let timeInMinutes: Int = (sortedArray[indexPath.row]["duration"] as! Int)/60
 		let shownHours: Int = timeInMinutes/60
 		let shownMinutes: Int = timeInMinutes-shownHours*60
-        
-		if shownMinutes<10 {
+		if shownHours < 1 {
+			cell!.timeLabel.text = "\(shownMinutes)min"
+		} else if shownMinutes<10 {
 			cell!.timeLabel.text = "\(shownHours)h0\(shownMinutes)"
 		} else {
 			cell!.timeLabel.text = "\(shownHours)h\(shownMinutes)"
