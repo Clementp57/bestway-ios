@@ -116,14 +116,30 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
             transportLabel = "Métro"
             transportIcon = #imageLiteral(resourceName: "metro")
             
-            //if((sortedArray[indexPath.row]["transport"]["lines"] as! [Any]).count > 0) {
-                
-            //}
+            if let lines = sortedArray[indexPath.row]["lines"] as! [AnyObject]? {
+                if(lines.count > 0) {
+                    for line in lines {
+                        var pictoview: UIImageView = UIImageView(frame: CGRect(x: 0.0, y:0.0, width: 40.0, height: 40.0))
+                        pictoview.image = UIImage(named: "l" + (line["number"] as! String))
+                        cell!.pictosContainer.addSubview(pictoview);
+                    }
+                }
+            }
             
             break
         case "tram":
             transportLabel = "Tramway"
             transportIcon = #imageLiteral(resourceName: "train")
+            
+            if let lines = sortedArray[indexPath.row]["lines"] as! [AnyObject]? {
+                if(lines.count > 0) {
+                    for line in lines {
+                        var pictoview: UIImageView = UIImageView(frame: CGRect(x: 0.0, y:0.0, width: 40.0, height: 40.0))
+                        pictoview.image = UIImage(named: "t" + (line["number"] as! String))
+                        cell!.pictosContainer.addSubview(pictoview);
+                    }
+                }
+            }
             break
         case "bicycling":
             transportLabel = "Vélo"
@@ -159,7 +175,7 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return self.firstTableView.frame.height/CGFloat(self.results.count)
 	}
-	
+    
 }
 
 extension ResultsViewController: UIScrollViewDelegate {
