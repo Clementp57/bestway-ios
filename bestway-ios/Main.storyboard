@@ -632,7 +632,7 @@
                             <constraint firstAttribute="trailing" secondItem="zgF-Ve-fDT" secondAttribute="trailing" constant="30" id="ck4-kt-Tgb"/>
                             <constraint firstItem="EEJ-Km-t56" firstAttribute="top" secondItem="zgF-Ve-fDT" secondAttribute="bottom" constant="30" id="dqW-8M-w95"/>
                             <constraint firstItem="Hyu-e9-p3X" firstAttribute="width" secondItem="RMI-ul-Le5" secondAttribute="width" id="fq3-6Y-P2y"/>
-                            <constraint firstItem="zgF-Ve-fDT" firstAttribute="top" secondItem="NS8-An-LLF" secondAttribute="bottom" constant="40" id="ypQ-9x-KQl"/>
+                            <constraint firstItem="zgF-Ve-fDT" firstAttribute="top" secondItem="NS8-An-LLF" secondAttribute="bottom" constant="30" id="ypQ-9x-KQl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Résultats" id="9ms-cr-H98">

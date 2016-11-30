@@ -70,7 +70,12 @@ class ResultsViewController: UIViewController {
 		self.geocodeTrip(completionHandler: {(success, error) in
 			if(success) {
 				BestwayClient.shared.getTransports(departure: self.departurePoint, arrival: self.arrivalPoint, completionHandler: { (success, error, result) in
-					if let array = result as? [[String:Any]] {
+					if var array = result as? [[String:Any]] {
+						for (i, entry) in array.enumerated() {
+							if entry["transport"] as! String == "train" {
+								array.remove(at: i)
+							}
+						}
 						self.results = array;
 						self.firstTableView.reloadData()
 						self.secondTableView.reloadData()
