@@ -61,7 +61,7 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
             let geocoder: CLGeocoder = CLGeocoder();
             geocoder.reverseGeocodeLocation(location!) { (placemark, error) in
                 if error == nil {
-//                    self.locationManager?.stopUpdatingLocation()
+                    self.locationManager?.stopUpdatingLocation()
 					self.userLocation = (placemark?[0].subThoroughfare)! + " " + (placemark?[0].thoroughfare)!
                     self.departureTextField.text = (placemark?[0].subThoroughfare)! + " " + (placemark?[0].thoroughfare)!
                 }

@@ -21,8 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 	let autoLog: Bool = false
 	
     override func viewDidLoad() {
-        backgroundImage.image = UIImage(named: "backgroundImage")
-            //?.blurryImage(blurRadius: 1.5);
         
 		NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardAppeared), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardDismissed), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
