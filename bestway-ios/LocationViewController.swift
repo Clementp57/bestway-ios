@@ -25,7 +25,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
     
     var departureAnnotation: MKPointAnnotation = MKPointAnnotation();
     var arrivalAnnotation: MKPointAnnotation = MKPointAnnotation();
-    
+	
+	var userLocation: String = ""
+	
     private var didEditArrival: Bool?
     
     override func viewDidLoad() {
@@ -59,7 +61,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
             let geocoder: CLGeocoder = CLGeocoder();
             geocoder.reverseGeocodeLocation(location!) { (placemark, error) in
                 if error == nil {
-                    self.locationManager?.stopUpdatingLocation()
+//                    self.locationManager?.stopUpdatingLocation()
+					self.userLocation = (placemark?[0].subThoroughfare)! + " " + (placemark?[0].thoroughfare)!
                     self.departureTextField.text = (placemark?[0].subThoroughfare)! + " " + (placemark?[0].thoroughfare)!
                 }
             }
@@ -80,6 +83,16 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
         present(autocompleteController, animated: true, completion: nil)
     }
 	
+	// MARK: Actions
+	
+	@IBAction func useUserLocation(_ sender: AnyObject) {
+		if self.userLocation != "" {
+			self.departureTextField.text = self.userLocation
+			self.updateMap(false, userloc: true)
+		}
+	}
+	
+	
 	// MARK: - Helpers
 	
     func acceptData(data: String!) {
@@ -88,10 +101,10 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
         } else {
             self.departureTextField.text = data
         }
-        self.updateMap(didEditArrival!);
+        self.updateMap(didEditArrival!, userloc: false);
     }
     
-    func updateMap(_ didEditArrival: Bool) -> Void {
+	func updateMap(_ didEditArrival: Bool, userloc: Bool) -> Void {
         let address = didEditArrival ? self.arrivalTextField.text! : self.departureTextField.text!;
         let geocoder = CLGeocoder();
         geocoder.geocodeAddressString(address, completionHandler: { (placemarks, error) in
@@ -111,7 +124,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
                         self.mapView.removeAnnotation(self.departureAnnotation);
                         self.departureAnnotation.coordinate.latitude = point.coordinate.latitude
                         self.departureAnnotation.coordinate.longitude = point.coordinate.longitude
-                        self.mapView.addAnnotation(self.departureAnnotation);
+						if !userloc {
+							self.mapView.addAnnotation(self.departureAnnotation);
+						}
                     }
                     
                     if(self.departureTextField.text! != "" && self.arrivalTextField.text! != "") {
