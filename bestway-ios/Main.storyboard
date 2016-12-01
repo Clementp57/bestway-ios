@@ -29,7 +29,7 @@
                                     <navigationItem id="Xl4-w4-gfs"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="loV-2f-UO1"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="backgroundjpg" translatesAutoresizingMaskIntoConstraints="NO" id="loV-2f-UO1"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -73,7 +73,7 @@
                                     <navigationItem title="Bestway" id="2fn-v0-x31"/>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="sqA-XV-qfj"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundjpg" translatesAutoresizingMaskIntoConstraints="NO" id="sqA-XV-qfj"/>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLH-6D-H54">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qK4-M4-WU1">
@@ -488,7 +488,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vrv-C3-57g" id="oW8-XK-WT2">
-                                                            <frame key="frameInset" width="375" height="59"/>
+                                                            <frame key="frameInset" width="375" height="60"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dwo-I3-7M3">
@@ -557,7 +557,7 @@
                                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PBX-kM-Dks" id="otj-qd-E0I">
-                                                            <frame key="frameInset" width="375" height="59"/>
+                                                            <frame key="frameInset" width="375" height="60"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6g3-z1-3VQ">
@@ -738,12 +738,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgroundImage" width="1088" height="816"/>
+        <image name="backgroundjpg" width="2201" height="3735"/>
         <image name="locate" width="76" height="76"/>
         <image name="map" width="25" height="19"/>
         <image name="settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="udy-h9-uxA"/>
+        <segue reference="upJ-rD-Sxz"/>
     </inferredMetricsTieBreakers>
 </document>

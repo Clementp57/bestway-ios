@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="backgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="n3w-3L-V7F"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="backgroundjpg" translatesAutoresizingMaskIntoConstraints="NO" id="n3w-3L-V7F"/>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYx-JF-VKw">
                                 <color key="backgroundColor" red="0.031372549020000001" green="0.2274509804" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -47,6 +47,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backgroundImage" width="1088" height="816"/>
+        <image name="backgroundjpg" width="2201" height="3735"/>
     </resources>
 </document>
