@@ -17,12 +17,17 @@ class ResultsViewController: UIViewController {
     var departurePoint: MKMapPoint = MKMapPoint();
     var arrivalPoint: MKMapPoint = MKMapPoint();
 	
-	var results: [[String:Any]] = []
+	var results: [[String:Any]] = [] {
+		didSet {
+			self.loadingView.removeFromSuperview()
+		}
+	}
     
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	@IBOutlet weak var pagerScrollView: UIScrollView!
 	@IBOutlet weak var firstTableView: UITableView!
 	@IBOutlet weak var thirdTableView: UITableView!
+	@IBOutlet weak var loadingView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -176,7 +181,70 @@ extension ResultsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return self.firstTableView.frame.height/CGFloat(self.results.count)
 	}
-    
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		//TODO
+		var sortedArray: [[String:Any]] = []
+		switch tableView {
+		case self.firstTableView://time sorting
+			if self.results.count > 0 {
+				sortedArray = self.results.sorted {
+					item1, item2 in
+					let duration1 = item1["duration"] as! Int
+					let duration2 = item2["duration"] as! Int
+					return duration1 < duration2
+				}
+			}
+		default://practical sorting
+			if self.results.count > 0 {
+				sortedArray = self.results.sorted {
+					item1, item2 in
+					let duration1 = item1["practicalIndex"] as! Int
+					let duration2 = item2["practicalIndex"] as! Int
+					return duration1 < duration2
+				}
+			}
+		}
+		var googleMode: String = ""
+		var mapMode: String = ""
+		switch(sortedArray[indexPath.row]["transport"] as! String) {
+		case "driving":
+			googleMode = "driving"
+			mapMode = "d"
+			break
+		case "bus":
+			googleMode = "transit"
+			mapMode = "r"
+			break
+		case "subway":
+			googleMode = "transit"
+			mapMode = "r"
+			break
+		case "tram":
+			googleMode = "transit"
+			mapMode = "r"
+			break
+		case "bicycling":
+			googleMode = "bicycling"
+			mapMode = "w"
+			break
+		case "walking":
+			googleMode = "walking"
+			mapMode = "w"
+			break
+		default:
+			break
+		}
+
+		var url: URL = URL(string:"comgooglemaps://?saddr=\(self.departurePoint.x),\(self.departurePoint.y)&daddr=\(self.arrivalPoint.x),\(self.arrivalPoint.y)&directionsmode=\(googleMode)")!//driving, transit, bicycling ou walking
+		if !UIApplication.shared.canOpenURL(url) {
+			url = URL(string:"http://maps.apple.com/?saddr=\(self.departurePoint.x),\(self.departurePoint.y)&daddr=\(self.arrivalPoint.x),\(self.arrivalPoint.y)&dirflg=\(mapMode)")!//w(walk),d(car),r(transit)
+		}
+		UIApplication.shared.open(url, options: [:], completionHandler: nil)
+		tableView.cellForRow(at: indexPath)?.setSelected(false, animated: true)
+	}
+	
 }
 
 extension ResultsViewController: UIScrollViewDelegate {

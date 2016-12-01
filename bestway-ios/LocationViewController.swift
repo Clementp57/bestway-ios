@@ -44,7 +44,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
+	
+	// MARK: - CLLocationManagerDelegate
+	
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last
         if location != nil {
@@ -62,8 +64,10 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
                 }
             }
         }
-    }
-    
+	}
+	
+	// MARK: - UITextFielDelegate
+	
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == self.arrivalTextField {
             self.didEditArrival = true
@@ -75,7 +79,9 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UITex
         autocompleteController.delegate = self
         present(autocompleteController, animated: true, completion: nil)
     }
-    
+	
+	// MARK: - Helpers
+	
     func acceptData(data: String!) {
         if(didEditArrival)! {
             self.arrivalTextField.text = data

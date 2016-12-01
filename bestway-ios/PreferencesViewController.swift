@@ -85,7 +85,7 @@ class PreferencesViewController: UIViewController {
     }
 	
 	override func viewWillDisappear(_ animated: Bool) {
-		self.savePreferences()
+//		self.savePreferences()
 	}
 
     override func didReceiveMemoryWarning() {
@@ -105,7 +105,9 @@ class PreferencesViewController: UIViewController {
 		BestwayClient.shared.savePreferences(bike: self.cycleCheckbox?.checkState == .checked, bus: self.busCheckbox?.checkState == .checked, walk: self.walkCheckbox?.checkState == .checked, subway: self.subwayCheckbox?.checkState == .checked, car: self.carCheckbox?.checkState == .checked, tram: self.tramCheckbox?.checkState == .checked) { (success, message) in
 			if success {
                 debugPrint("Success");
-				self.navigationController?.popViewController(animated: true)
+				let savedAlert = UIAlertController(title: "Préférences sauvegardées", message: nil, preferredStyle: .alert)
+				savedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+				self.present(savedAlert, animated: true, completion: nil)
 			} else {
 				let errorAlert = UIAlertController(title: "Un problème est survenu", message: "préférences non sauvegardées", preferredStyle: .alert)
 				errorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
